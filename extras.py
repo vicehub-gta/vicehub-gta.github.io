@@ -262,7 +262,8 @@ def legal_ok(cfg):
 
 def impressum_page(cfg, lang):
     lg = cfg["legal"]
-    addr = f'{E(lg["name"])}<br>{E(lg["street"])}<br>{E(lg["city"])}<br>{E(lg.get("country", "Deutschland"))}'
+    addr = (f'{E(lg["name"])}<br>' + (f'{E(lg["company"])}<br>' if lg.get("company") else "") +
+            f'{E(lg["street"])}<br>{E(lg["city"])}<br>{E(lg.get("country", "Deutschland"))}')
     mail = E(lg["email"]).replace("@", "&#64;")
     if lang == "de":
         return f"""<section class="wrap narrow legal"><h1 class="cat">IMPRESSUM</h1>
@@ -279,7 +280,7 @@ def impressum_page(cfg, lang):
 
 def privacy_page(cfg, lang):
     lg = cfg["legal"]
-    who = f'{E(lg["name"])}, {E(lg["street"])}, {E(lg["city"])}, E-Mail: {E(lg["email"]).replace("@", "&#64;")}'
+    who = f'{E(lg["name"])}' + (f', {E(lg["company"])}' if lg.get("company") else "") + f', {E(lg["street"])}, {E(lg["city"])}, E-Mail: {E(lg["email"]).replace("@", "&#64;")}'
     ads_de = ads_en = ""
     if cfg.get("adsense_client"):
         ads_de = ("<h2>Google AdSense</h2><p>Diese Website zeigt Werbung über Google AdSense (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). "
