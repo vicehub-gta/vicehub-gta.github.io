@@ -1,6 +1,6 @@
 {
-  "origin": "https://samersstudio-spec.github.io/vice-hub",
-  "base": "/vice-hub",
+  "origin": "https://vicehub-gta.github.io",
+  "base": "",
   "description": "GTA 6 hacks, tips, mission guides and rankings. Checked against real sources, no fake glitches, updated every day.",
   "checkout_url": "",
   "socials": [
@@ -22,5 +22,5 @@
     "hacks": "Every money method and shortcut is checked before it goes up. No fake glitch clickbait.",
     "rankings": "Top cars, guns, properties and hideouts, re-ranked as soon as players have real numbers."
   },
-  "tip_url": "https://github.com/samersstudio-spec/vice-hub/issues/new?template=tip.yml"
+  "tip_url": "https://github.com/vicehub-gta/vicehub-gta.github.io/issues/new?template=tip.yml"
 }
