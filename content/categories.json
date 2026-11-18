@@ -1,0 +1,7 @@
+[
+  {"id": "news", "label": "News", "emoji": "📰", "blurb": "Launch facts, patches, updates"},
+  {"id": "hacks", "label": "Hacks", "emoji": "🛠️", "blurb": "Money, glitches, shortcuts (verified only)"},
+  {"id": "tips", "label": "Tips", "emoji": "💡", "blurb": "Settings, first hours, smart moves"},
+  {"id": "missions", "label": "Missions", "emoji": "🎯", "blurb": "Walkthroughs & gold-medal routes"},
+  {"id": "rankings", "label": "Rankings", "emoji": "🏆", "blurb": "Best cars, guns, spots, ranked"}
+]

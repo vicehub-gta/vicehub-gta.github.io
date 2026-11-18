@@ -1,0 +1,26 @@
+{
+  "origin": "https://samersstudio-spec.github.io/vice-hub",
+  "base": "/vice-hub",
+  "description": "GTA 6 hacks, tips, mission guides and rankings. Checked against real sources, no fake glitches, updated every day.",
+  "checkout_url": "",
+  "socials": [
+    {
+      "label": "TikTok",
+      "href": "https://www.tiktok.com/@ritogta"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://www.youtube.com/@RitoGTA"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/ritogta"
+    }
+  ],
+  "soon": {
+    "missions": "Full walkthroughs for every story mission, gold-medal routes and hidden extras start dropping on launch day (19 Nov) and keep coming daily.",
+    "hacks": "Every money method and shortcut is checked before it goes up. No fake glitch clickbait.",
+    "rankings": "Top cars, guns, properties and hideouts, re-ranked as soon as players have real numbers."
+  },
+  "tip_url": "https://github.com/samersstudio-spec/vice-hub/issues/new?template=tip.yml"
+}

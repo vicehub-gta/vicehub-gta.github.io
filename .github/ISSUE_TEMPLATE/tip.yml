@@ -1,0 +1,23 @@
+name: Share a GTA 6 tip
+description: Post a tip, money method, hidden spot or mission trick for the Vice Hub community board.
+title: "[Tip] "
+labels: ["tip"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: ["Hacks", "Tips", "Missions", "Rankings", "News"]
+    validations:
+      required: true
+  - type: textarea
+    id: tip
+    attributes:
+      label: Your tip
+      description: Where, how, and what you get. Screenshots welcome.
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name to show (optional)

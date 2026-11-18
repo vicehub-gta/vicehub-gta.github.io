@@ -1,0 +1,45 @@
+{
+  "slug": "xbox-new-zealand-trick-play-early",
+  "title": "Play GTA 6 hours early: the Xbox New Zealand trick, step by step",
+  "category": "hacks",
+  "date": "2026-11-18",
+  "minutes": 4,
+  "summary": "Xbox players can switch their console region to New Zealand and start GTA 6 on 18 November, but it bends the rules and does not work on PS5.",
+  "body": [
+    "GTA 6 unlocks at midnight local time, and New Zealand hits midnight first. Because Xbox uses one global store, changing your console's region to New Zealand lets you start the game when Kiwis do.",
+    "## When New Zealand midnight hits (18 November)",
+    "- US West: 3 am PT",
+    "- US East: 6 am ET",
+    "- UK: 11:00 GMT",
+    "- Central Europe: 12:00 CET",
+    "- Eastern Australia: 22:00 AEDT",
+    "That means the trick is already live today, almost a full day ahead of the normal European and US launch.",
+    "## Step by step (Xbox Series X|S)",
+    "- 1. Make sure your purchase or pre-order is done first. Switching region before paying can show prices in NZ dollars and block the payment",
+    "- 2. Finish the pre-load (up to 212 GB). The trick does nothing if the game is not installed",
+    "- 3. Open Settings, then System, then Language & location",
+    "- 4. Set Location to New Zealand",
+    "- 5. Pick Restart now and let the console reboot",
+    "- 6. Launch GTA 6 once it is past midnight in New Zealand",
+    "- 7. When you are done, switch the region back to your real country",
+    "## No download? Try the cloud",
+    "GamesRadar reports GTA 6 is also playable through Xbox Cloud Gaming, which even works on an old Xbox One. Handy if your 212 GB pre-load is not finished.",
+    "## PS5 owners: skip it",
+    "On PlayStation the unlock is tied to the region of your PSN account, not your console settings. Changing the console region will not make the game start early.",
+    "## The risk, honestly",
+    "Changing your region to start a game early technically breaks the Xbox terms of use. Lots of players have done it for years without trouble, and neither Microsoft nor Rockstar has commented on GTA 6 specifically, but you do it at your own risk. Do not use it on an account you cannot afford to have flagged.",
+    "## Our tip",
+    "If you play early, mute GTA 6 keywords on social media first. Everyone else will be posting spoilers within hours, and you do not want the story ruined while you are still in the prologue."
+  ],
+  "sources": [
+    {
+      "label": "GamesRadar+, updated 18 Nov 2026",
+      "url": "https://www.gamesradar.com/games/grand-theft-auto/gta-6-play-early-new-zealand-trick/"
+    },
+    {
+      "label": "VGC, 18 Nov 2026",
+      "url": "https://www.videogameschronicle.com/news/new-zealands-official-tourism-agency-jokes-about-gta-6-players-joining-us-to-play-the-game-early/"
+    }
+  ],
+  "order": 2
+}
