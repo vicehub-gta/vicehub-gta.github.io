@@ -18,6 +18,9 @@ import os
 import shutil
 from pathlib import Path
 
+import extras
+from extras import X
+
 ROOT = Path(__file__).parent
 OUT = ROOT / "_site"
 CFG = json.loads((ROOT / "site.json").read_text())
@@ -143,13 +146,19 @@ def cl(c, lang, key="label"):
     return c.get(f"{key}_{lang}") or c[key] if lang != "en" else c[key]
 
 
-def page(lang, title, desc, path, body, og_type="website", alternates=True):
+def page(lang, title, desc, path, body, og_type="website", alternates=True, active=""):
     t = T[lang]
     canon = f"{ORIGIN}{pre(lang)}{path}"
     cover = f"{ORIGIN}/assets/cover.png"
-    nav = "".join(
-        f'<a href="{u("/" + c + "/", lang)}" class="nav-hide">{cl(CAT[c], lang)}</a>' for c in ("hacks", "tips", "missions")
-    ) + f'<a href="{u("/community/", lang)}" style="color:#ffe58a">{t["community"]}</a>'
+    x = X[lang]
+    nav = f'<a href="{u("/map/", lang)}" class="nav-hide">🗺️ {x["map"]}</a>' + "".join(
+        f'<a href="{u("/" + c + "/", lang)}" class="nav-hide">{cl(CAT[c], lang)}</a>' for c in ("news", "hacks", "tips")
+    ) + f'<a href="{u("/community/", lang)}" class="nav-hide" style="color:#ffe58a">{t["community"]}</a>' \
+      + f'<a href="{u("/buy/", lang)}" class="nav-hide">🛒 {x["buy"]}</a>'
+    legal = (f'<a href="{u("/impressum/", lang)}">{x["imp"]}</a><a href="{u("/datenschutz/", lang)}">{x["priv"]}</a>'
+             if extras.legal_ok(CFG) else "")
+    fnav = (f'<nav><a href="{u("/map/", lang)}">{x["map"]}</a><a href="{u("/buy/", lang)}">{x["buy"]}</a>'
+            f'<a href="{u("/community/", lang)}">Community</a><a href="{u("/premium/", lang)}">Premium</a>{legal}</nav>')
     other = "de" if lang == "en" else "en"
     switch = (f'<a href="{u(path, other)}" class="lang" hreflang="{other}" title="{T[lang]["switch_name"]}" '
               f'onclick="try{{localStorage.setItem(\'lang\',\'{other}\')}}catch(e){{}}">{t["switch"]}</a>')
@@ -176,8 +185,8 @@ def page(lang, title, desc, path, body, og_type="website", alternates=True):
 <meta name="theme-color" content="#0d0614">
 <link rel="icon" type="image/png" href="{u('/assets/favicon.png')}">
 <link rel="apple-touch-icon" href="{u('/assets/apple-touch-icon.png')}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
+<link rel="preload" href="{u('/assets/fonts/anton.woff2')}" as="font" type="font/woff2" crossorigin>
+{extras.head_extra(CFG, u)}
 <link rel="stylesheet" href="{u('/assets/style.css')}">
 </head><body>
 <div class="glow"></div>
@@ -187,9 +196,12 @@ def page(lang, title, desc, path, body, og_type="website", alternates=True):
 </header>
 <main>{body}</main>
 <footer class="wrap foot">
-  <p>{t['footer']}</p>
+  {fnav}
   <p class="soc">{''.join(f'<a href="{s["href"]}" target="_blank" rel="noopener">{s["label"]}</a>' for s in CFG["socials"])}</p>
+  <p>{t['footer']}</p>
+  <p class="tiny" style="text-align:left">{x['footer_aff']}</p>
 </footer>
+{extras.tabbar(CFG, lang, u, active)}{extras.SHARE_JS}
 </body></html>"""
 
 
@@ -279,15 +291,18 @@ def build_lang(lang, arts, today, tips):
   <h1>{t['h1a']}<br><span class="grad">{t['h1b']}</span></h1>
   <p class="lead">{t['lead_home']}</p>
   {countdown(lang) if show_cd else ''}
+  <div class="cta-row"><a class="btn-grad" href="{u('/map/', lang)}">{X[lang]['hero_map']}</a><a class="btn-ghost" href="#latest">{X[lang]['hero_news']}</a></div>
   {week_strip(today, lang)}</div>
   <div class="hero-prem">{premium_card(lang, compact=True)}</div>
 </section>
-<section class="wrap"><div class="tiles">{tiles}</div></section>
-<section class="wrap" id="latest"><h2 class="sec">{t['latest']}</h2><div class="grid">{''.join(card(a, lang) for a in arts)}</div></section>
+<section class="wrap"><div class="tiles">{tiles}</div>{extras.features(lang, u)}</section>
+<section class="wrap" id="latest"><h2 class="sec">{t['latest']}</h2><div class="grid">{''.join(card(a, lang) for a in arts[:6])}</div></section>
+<section class="wrap">{extras.follow_box(CFG, lang)}</section>
+<section class="wrap"><div class="grid" style="margin-top:16px">{''.join(card(a, lang) for a in arts[6:])}</div></section>
 <section class="wrap"><div class="band"><div><h2 class="sec">{t['band_h']}</h2>
 <p class="lead">{t['band_p']}</p></div>{premium_card(lang)}</div></section>"""
     desc = CFG.get(f"description_{lang}") or CFG["description"] if lang != "en" else CFG["description"]
-    write(f"{P}/", page(lang, t["home_title"], desc, "/", home))
+    write(f"{P}/", page(lang, t["home_title"], desc, "/", home, active="home"))
 
     soon = CFG.get("soon_de" if lang == "de" else "soon", {}) or CFG.get("soon", {})
     for c in CATS:
@@ -323,9 +338,10 @@ def build_lang(lang, arts, today, tips):
 {thumb(a['category'], lang, big=True)}
 <div class="row">{chip(a['category'], lang)}<span class="muted">{fmt(a['date'], lang)} · {minutes(la)} {t['min_read']}</span></div>
 <h1>{E(la['title'])}</h1><p class="lead">{E(la['summary'])}</p>
-<div class="prose">{content}</div>{src}</article>
+<div class="prose">{content}</div>{src}
+{extras.share_bar(lang, f"{ORIGIN}{P}/a/{a['slug']}/", la['title'])}{extras.buy_box(lang, u)}</article>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<section class="wrap"><h2 class="sec">{t['more']}</h2><div class="grid">{''.join(card(x, lang) for x in more)}</div></section>"""
+<section class="wrap"><h2 class="sec">{t['more']}</h2><div class="grid">{''.join(card(x, lang) for x in more)}</div>{extras.follow_box(CFG, lang)}</section>"""
         write(f"{P}/a/{a['slug']}/", page(lang, f"{la['title']} · Vice Hub", la["summary"], f"/a/{a['slug']}/", body, "article"))
 
     tip_html = "".join(
@@ -335,7 +351,7 @@ def build_lang(lang, arts, today, tips):
     com = f"""<section class="wrap"><p class="kicker" style="padding-top:24px;color:#ffe58a">{t['com_kicker']}</p><h1 class="cat">{t['com_h']}</h1>
 <p class="lead">{t['com_lead']}</p>
 <div class="cgrid"><div>{tip_html}</div><div class="prem"><div class="prem-top"><span>{t['post_tip_h']}</span></div><p style="color:#e6d6f2">{t['post_tip_p']}</p><a class="btn-grad" style="display:block" href="{E(CFG['tip_url'])}" target="_blank" rel="noopener">{t['share_tip']}</a><p class="tiny">{t['form_note']}</p></div></div></section>"""
-    write(f"{P}/community/", page(lang, t["com_title"], t["com_desc"], "/community/", com))
+    write(f"{P}/community/", page(lang, t["com_title"], t["com_desc"], "/community/", com, active="community"))
 
     checkout = CFG.get("checkout_url", "")
     cta = (f'<a class="btn-grad big" href="{E(checkout)}">{t["prem_sub"]}</a>' if checkout else
@@ -343,8 +359,17 @@ def build_lang(lang, arts, today, tips):
     faq = "".join(f"<details><summary>{q}</summary><p>{a_}</p></details>" for q, a_ in t["prem_faq"])
     prem_body = f"""<section class="wrap narrow"><p class="kicker" style="padding-top:24px">Vice Hub Premium</p><h1 class="cat">{t['prem_h']}</h1>
 <p class="lead">{t['prem_intro']}</p>
-<ul class="perks">{''.join(f'<li>{p}</li>' for p in t['prem_perks'])}</ul>{cta}<div class="faq">{faq}</div></section>"""
+<ul class="perks">{''.join(f'<li>{p}</li>' for p in t['prem_perks'])}</ul>{cta}<div class="faq">{faq}</div>
+{'' if checkout else extras.follow_box(CFG, lang)}</section>"""
     write(f"{P}/premium/", page(lang, t["prem_title"], t["prem_desc"], "/premium/", prem_body))
+
+    x = X[lang]
+    write(f"{P}/map/", page(lang, x["map_title"], x["map_desc"], "/map/", extras.map_page(CFG, lang, u, CFG["tip_url"]) +
+                            f'<section class="wrap">{extras.follow_box(CFG, lang)}</section>', active="map"))
+    write(f"{P}/buy/", page(lang, x["buy_title"], x["buy_desc"], "/buy/", extras.buy_page(CFG, lang, u), active="buy"))
+    if extras.legal_ok(CFG):
+        write(f"{P}/impressum/", page(lang, f"{x['imp']} · Vice Hub", x["imp"], "/impressum/", extras.impressum_page(CFG, lang)))
+        write(f"{P}/datenschutz/", page(lang, f"{x['priv']} · Vice Hub", x["priv"], "/datenschutz/", extras.privacy_page(CFG, lang)))
 
     nf = page(lang, t["nf_title"], t["nf_title"], "/404.html",
               f'<section class="wrap narrow"><h1 class="cat">WASTED.</h1><p class="lead">{t["nf_p"]}</p><a class="btn-grad" href="{u("/", lang)}">{t["nf_btn"]}</a></section>',
@@ -357,7 +382,17 @@ def build():
         shutil.rmtree(OUT)
     OUT.mkdir()
     shutil.copytree(ROOT / "assets", OUT / "assets")
+    css = OUT / "assets" / "style.css"
+    css.write_text(extras.CSS + css.read_text())
     (OUT / ".nojekyll").write_text("")
+    (OUT / "manifest.webmanifest").write_text(extras.manifest(CFG, BASE))
+    if CFG.get("adsense_client"):
+        pub = CFG["adsense_client"].replace("ca-", "")
+        (OUT / "ads.txt").write_text(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
+    if CFG.get("indexnow_key"):
+        (OUT / f"{CFG['indexnow_key']}.txt").write_text(CFG["indexnow_key"])
+    for f in CFG.get("verification_files", []):
+        (OUT / f["name"]).write_text(f["content"])
     arts = load_articles()
     today = dt.date.fromisoformat(arts[0]["date"]) if arts else dt.date.today()
     today = max(today, dt.date.today())
@@ -367,7 +402,7 @@ def build():
         nf = build_lang(lang, arts, today, tips)
         write(f"{pre(lang)}/404.html", nf)
 
-    paths = ["/", "/premium/", "/community/"] + [f"/{c['id']}/" for c in CATS] + [f"/a/{a['slug']}/" for a in arts]
+    paths = ["/", "/map/", "/buy/", "/premium/", "/community/"] + [f"/{c['id']}/" for c in CATS] + [f"/a/{a['slug']}/" for a in arts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for p in paths:
