@@ -37,7 +37,12 @@
   "discord_url": "",
   "google_site_verification": "",
   "indexnow_key": "2e750f6c49d551874f140112230d8c08",
-  "verification_files": [],
+  "verification_files": [
+    {
+      "name": "google5cb1205e9881cfed.html",
+      "content": "google-site-verification: google5cb1205e9881cfed.html"
+    }
+  ],
   "legal": {
     "name": "",
     "street": "",
