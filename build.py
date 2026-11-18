@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Static site generator for Vice Hub (GTA 6 fan hub).
+"""Static site generator for Vice Hub (GTA 6 fan hub), English + German.
 
 Content: content/categories.json, content/articles/*.json (one article per file).
 Output: _site/  (deployed to GitHub Pages by .github/workflows/pages.yml)
+English lives at /, German at /de/.
 
-Article JSON: {slug, title, category, date (YYYY-MM-DD), minutes, summary,
+Article JSON: {slug, title, category, date (YYYY-MM-DD), summary,
                body: ["paragraph", "## Heading", "- bullet"], premium?: bool,
-               sources?: [{label, url}]}
+               sources?: [{label, url}],
+               de?: {title, summary, body}}   <- German version (falls back to English)
+Reading time is computed from the body.
 """
 import datetime as dt
 import html
@@ -22,7 +25,83 @@ BASE = os.environ.get("BASE_PATH", CFG.get("base", "")).rstrip("/")
 ORIGIN = CFG["origin"].rstrip("/")
 CATS = json.loads((ROOT / "content" / "categories.json").read_text())
 CAT = {c["id"]: c for c in CATS}
+LANGS = ("en", "de")
+LAUNCH = "2026-11-19"  # midnight local time, rolling launch
 E = html.escape
+
+T = {
+    "en": dict(
+        tagline="GTA 6 community hub", community="Community", premium="Premium",
+        footer="Vice Hub by Rito GTA · fan-made guides, not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Grand Theft Auto is a trademark of Take-Two Interactive.",
+        min="min", min_read="min read", locked="🔒 PREMIUM", updated="● updated daily",
+        days=["MO", "TU", "WE", "TH", "FR", "SA", "SU"],
+        prem_label="VICE HUB PREMIUM", per_month=" / month", get_prem="See what's in Premium", cancel="Cancel anytime.",
+        perks=["Every tested money method, ranked by cash per hour", "Full mission walkthroughs with gold-medal routes",
+               "Map of hidden shops, stashes and secrets", "New premium guide every day"],
+        kicker="GTA 6 · Vice City · Leonida", h1a="EVERYTHING GTA 6.", h1b="UPDATED DAILY.",
+        lead_home="Hacks, tips, mission guides and rankings. Every fact linked to its source, no fake glitches, no spoilers in titles.",
+        cd_label="GTA 6 unlocks in", cd_out="GTA 6 IS OUT NOW", cd_static="19 Nov 2026 · 00:00 your local time",
+        cd_units=["d", "h", "m", "s"],
+        community_tile="Player tips, voted by you", latest="LATEST", band_h="GO PREMIUM FOR THE GOOD STUFF",
+        band_p="News and basic guides stay free forever. Premium is for the deep stuff: every tested money method, full mission walkthroughs and the map of hidden spots, the day we find them.",
+        home_title="Vice Hub · Everything GTA 6, updated daily",
+        cat_suffix=". New posts every day.", cat_empty="First guides land here on launch day.",
+        cat_desc="Updated daily on Vice Hub.", more="MORE GUIDES", sources="Sources",
+        com_kicker="By players, for players", com_h="COMMUNITY TIPS",
+        com_lead="Found a money trick, a hidden shop or a faster mission route? Post it. Upvote the best ones with 👍. The top tips get checked and turned into full guides.",
+        com_empty="The board opens with the game. Post the first tip and it shows up here.",
+        post_tip_h="POST A TIP", post_tip_p="Takes 30 seconds. Pick a category, write your tip, done. Tips with the most 👍 land on this board.",
+        share_tip="Share your tip", form_note="Opens a short form (free GitHub account needed).", by="by", anon="anonymous",
+        com_title="GTA 6 Community Tips · Vice Hub", com_desc="Tips, glitches and secrets found by GTA 6 players. Vote for the best ones.",
+        prem_sub="Subscribe for 5 € / month", prem_h="THE GOOD STUFF. 5 € / MONTH.",
+        prem_intro="Vice Hub stays free for news, launch info and basic tips. Premium unlocks the guides that take us hours of testing.",
+        prem_perks=["💰 Every tested money method, ranked by cash per hour", "🎯 Full mission walkthroughs with gold-medal routes",
+                    "🗺️ The map of hidden shops, stashes and secrets", "⚡ At most one new premium guide per day, never news", "🚫 No ads"],
+        prem_status="Premium is not open yet. We take no payments and ask for no card details until it launches. Follow us to hear first:",
+        prem_faq=[("What stays free?", "All news, launch facts, release times and basic tips. Only deep guides are Premium."),
+                  ("Can I cancel?", "Yes, anytime. No minimum term."),
+                  ("When does it open?", "Once the first real guides are tested after launch. We announce it on TikTok, YouTube and Instagram.")],
+        prem_title="Vice Hub Premium · 5 € / month", prem_desc="Every tested GTA 6 money method, mission walkthroughs and hidden spots.",
+        nf_title="Not found · Vice Hub", nf_p="This page does not exist.", nf_btn="Back to the hub",
+        switch="DE", switch_name="Deutsch",
+    ),
+    "de": dict(
+        tagline="GTA-6-Community-Hub", community="Community", premium="Premium",
+        footer="Vice Hub by Rito GTA · Fan-Guides, nicht verbunden mit oder unterstützt von Rockstar Games oder Take-Two Interactive. Grand Theft Auto ist eine Marke von Take-Two Interactive.",
+        min="Min.", min_read="Min. Lesezeit", locked="🔒 PREMIUM", updated="● täglich neu",
+        days=["MO", "DI", "MI", "DO", "FR", "SA", "SO"],
+        prem_label="VICE HUB PREMIUM", per_month=" / Monat", get_prem="Das steckt in Premium", cancel="Jederzeit kündbar.",
+        perks=["Jede getestete Geldmethode, sortiert nach Cash pro Stunde", "Komplette Missions-Walkthroughs mit Gold-Routen",
+               "Karte mit versteckten Shops, Verstecken und Geheimnissen", "Jeden Tag ein neuer Premium-Guide"],
+        kicker="GTA 6 · Vice City · Leonida", h1a="ALLES ZU GTA 6.", h1b="JEDEN TAG NEU.",
+        lead_home="Hacks, Tipps, Missionsguides und Rankings. Jeder Fakt mit Quelle, keine Fake-Glitches, keine Spoiler in Titeln.",
+        cd_label="GTA 6 startet in", cd_out="GTA 6 IST DRAUSSEN", cd_static="19. Nov. 2026 · 00:00 Uhr deine Ortszeit",
+        cd_units=["T", "h", "m", "s"],
+        community_tile="Spieler-Tipps, von euch gevotet", latest="NEU", band_h="PREMIUM FÜR DIE HARTEN SACHEN",
+        band_p="News und Basis-Guides bleiben für immer gratis. Premium ist für das Tiefe: jede getestete Geldmethode, komplette Missions-Walkthroughs und die Karte der versteckten Orte, am Tag, an dem wir sie finden.",
+        home_title="Vice Hub · Alles zu GTA 6, jeden Tag neu",
+        cat_suffix=". Jeden Tag neue Beiträge.", cat_empty="Die ersten Guides kommen am Launch-Tag.",
+        cat_desc="Täglich neu auf Vice Hub.", more="MEHR GUIDES", sources="Quellen",
+        com_kicker="Von Spielern, für Spieler", com_h="COMMUNITY-TIPPS",
+        com_lead="Geldtrick, versteckter Shop oder schnellere Missionsroute gefunden? Poste ihn. Die besten bekommen 👍, die Top-Tipps prüfen wir und machen daraus ganze Guides.",
+        com_empty="Das Board startet mit dem Spiel. Poste den ersten Tipp und er erscheint hier.",
+        post_tip_h="TIPP POSTEN", post_tip_p="Dauert 30 Sekunden. Kategorie wählen, Tipp schreiben, fertig. Tipps mit den meisten 👍 landen auf diesem Board.",
+        share_tip="Tipp teilen", form_note="Öffnet ein kurzes Formular (kostenloses GitHub-Konto nötig).", by="von", anon="anonym",
+        com_title="GTA-6-Community-Tipps · Vice Hub", com_desc="Tipps, Glitches und Geheimnisse von GTA-6-Spielern. Vote für die besten.",
+        prem_sub="Für 5 € / Monat abonnieren", prem_h="DIE HARTEN SACHEN. 5 € / MONAT.",
+        prem_intro="Vice Hub bleibt gratis für News, Launch-Infos und Basis-Tipps. Premium schaltet die Guides frei, für die wir stundenlang testen.",
+        prem_perks=["💰 Jede getestete Geldmethode, sortiert nach Cash pro Stunde", "🎯 Komplette Missions-Walkthroughs mit Gold-Routen",
+                    "🗺️ Die Karte der versteckten Shops, Verstecke und Geheimnisse", "⚡ Höchstens ein neuer Premium-Guide pro Tag, nie News", "🚫 Keine Werbung"],
+        prem_status="Premium ist noch nicht offen. Bis zum Start nehmen wir kein Geld und fragen keine Kartendaten ab. Folge uns, dann erfährst du es zuerst:",
+        prem_faq=[("Was bleibt gratis?", "Alle News, Launch-Fakten, Release-Zeiten und Basis-Tipps. Nur tiefe Guides sind Premium."),
+                  ("Kann ich kündigen?", "Ja, jederzeit. Keine Mindestlaufzeit."),
+                  ("Wann geht es los?", "Sobald nach dem Launch die ersten echten Guides getestet sind. Wir sagen es auf TikTok, YouTube und Instagram an.")],
+        prem_title="Vice Hub Premium · 5 € / Monat", prem_desc="Jede getestete GTA-6-Geldmethode, Missions-Walkthroughs und versteckte Orte.",
+        nf_title="Nicht gefunden · Vice Hub", nf_p="Diese Seite gibt es nicht.", nf_btn="Zurück zum Hub",
+        switch="EN", switch_name="English",
+    ),
+}
+MONTHS_DE = ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."]
 
 
 def load_articles():
@@ -35,73 +114,127 @@ def load_articles():
     return arts
 
 
-def u(path):
-    return f"{BASE}{path}"
+def loc(a, lang):
+    """Article in the given language (falls back to English)."""
+    if lang == "de" and isinstance(a.get("de"), dict):
+        return {**a, **{k: v for k, v in a["de"].items() if v}}
+    return a
 
 
-def fmt(d):
-    return dt.date.fromisoformat(d).strftime("%-d %b %Y")
+def minutes(a):
+    words = sum(len(x.split()) for x in a["body"]) + len(a["summary"].split())
+    return max(1, round(words / 200))
 
 
-def page(title, desc, path, body, og_type="website"):
-    canon = f"{ORIGIN}{path}"
+def pre(lang):
+    return "/de" if lang == "de" else ""
+
+
+def u(path, lang=None):
+    return f"{BASE}{pre(lang)}{path}"
+
+
+def fmt(d, lang):
+    d = dt.date.fromisoformat(d)
+    return f"{d.day}. {MONTHS_DE[d.month - 1]} {d.year}" if lang == "de" else d.strftime("%-d %b %Y")
+
+
+def cl(c, lang, key="label"):
+    return c.get(f"{key}_{lang}") or c[key] if lang != "en" else c[key]
+
+
+def page(lang, title, desc, path, body, og_type="website", alternates=True):
+    t = T[lang]
+    canon = f"{ORIGIN}{pre(lang)}{path}"
     cover = f"{ORIGIN}/assets/cover.png"
     nav = "".join(
-        f'<a href="{u("/" + c + "/")}" class="nav-hide">{CAT[c]["label"]}</a>' for c in ("hacks", "tips", "missions")
-    ) + f'<a href="{u("/community/")}" style="color:#ffe58a">Community</a>'
+        f'<a href="{u("/" + c + "/", lang)}" class="nav-hide">{cl(CAT[c], lang)}</a>' for c in ("hacks", "tips", "missions")
+    ) + f'<a href="{u("/community/", lang)}" style="color:#ffe58a">{t["community"]}</a>'
+    other = "de" if lang == "en" else "en"
+    switch = (f'<a href="{u(path, other)}" class="lang" hreflang="{other}" title="{T[lang]["switch_name"]}" '
+              f'onclick="try{{localStorage.setItem(\'lang\',\'{other}\')}}catch(e){{}}">{t["switch"]}</a>')
+    alt = ""
+    if alternates:
+        alt = (f'<link rel="alternate" hreflang="en" href="{ORIGIN}{path}">'
+               f'<link rel="alternate" hreflang="de" href="{ORIGIN}/de{path}">'
+               f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{path}">')
+    # German browsers land on /de/ unless the visitor picked a language before.
+    redirect = ""
+    if lang == "en" and alternates:
+        redirect = ("<script>try{if(!localStorage.getItem('lang')&&/^de\\b/i.test(navigator.language||'')){"
+                    f"location.replace('{BASE}/de'+location.pathname.slice({len(BASE)})+location.search+location.hash)}}}}catch(e){{}}</script>")
     return f"""<!doctype html>
-<html lang="en"><head>
+<html lang="{lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(title)}</title>
+{redirect}<title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
-<link rel="canonical" href="{canon}">
+<link rel="canonical" href="{canon}">{alt}
 <meta property="og:type" content="{og_type}"><meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{canon}">
+<meta property="og:locale" content="{'de_DE' if lang == 'de' else 'en_US'}">
 <meta property="og:image" content="{cover}"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d0614">
 <link rel="icon" type="image/png" href="{u('/assets/favicon.png')}">
 <link rel="apple-touch-icon" href="{u('/assets/apple-touch-icon.png')}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{u('/assets/style.css')}">
 </head><body>
 <div class="glow"></div>
 <header class="wrap top">
-  <a href="{u('/')}" class="logo">VICE<span>HUB</span><small>GTA 6 community hub</small></a>
-  <nav>{nav}<a href="{u('/premium/')}" class="btn-prem">Premium</a></nav>
+  <a href="{u('/', lang)}" class="logo">VICE<span>HUB</span><small>{t['tagline']}</small></a>
+  <nav>{nav}{switch}<a href="{u('/premium/', lang)}" class="btn-prem">{t['premium']}</a></nav>
 </header>
 <main>{body}</main>
 <footer class="wrap foot">
-  <p>Vice Hub by Rito GTA · fan-made guides, not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. Grand Theft Auto is a trademark of Take-Two Interactive.</p>
+  <p>{t['footer']}</p>
   <p class="soc">{''.join(f'<a href="{s["href"]}" target="_blank" rel="noopener">{s["label"]}</a>' for s in CFG["socials"])}</p>
 </footer>
 </body></html>"""
 
 
-def chip(c):
-    return f'<span class="chip">{CAT[c]["emoji"]} {CAT[c]["label"]}</span>'
+def chip(c, lang):
+    return f'<span class="chip">{CAT[c]["emoji"]} {cl(CAT[c], lang)}</span>'
 
 
-def card(a):
-    tag = '<span class="lock">🔒 PREMIUM</span>' if a.get("premium") else f'<span class="muted">{a["minutes"]} min</span>'
-    return f"""<a class="card" href="{u('/a/' + a['slug'] + '/')}">
-<div class="row">{chip(a['category'])}{tag}</div>
-<h3>{E(a['title'])}</h3><p>{E(a['summary'])}</p><span class="date">{fmt(a['date'])}</span></a>"""
+def thumb(c, lang, big=False):
+    return f'<div class="thumb t-{c}{" big" if big else ""}" aria-hidden="true"><span class="em">{CAT[c]["emoji"]}</span><span class="w">{cl(CAT[c], lang).upper()}</span></div>'
 
 
-def week_strip(today):
+def card(a, lang):
+    t = T[lang]
+    tag = f'<span class="lock">{t["locked"]}</span>' if a.get("premium") else f'<span class="muted">{minutes(a)} {t["min"]}</span>'
+    la = loc(a, lang)
+    return f"""<a class="card" href="{u('/a/' + a['slug'] + '/', lang)}">{thumb(a['category'], lang)}
+<h3>{E(la['title'])}</h3><p>{E(la['summary'])}</p><div class="row date"><span>{fmt(a['date'], lang)}</span>{tag}</div></a>"""
+
+
+def week_strip(today, lang):
+    t = T[lang]
     start = today - dt.timedelta(days=today.weekday())
     cells = []
     for i in range(7):
         d = start + dt.timedelta(days=i)
         on = d <= today
-        cells.append(f'<div class="day{" on" if on else ""}"><b>{d.strftime("%a").upper()[:2]}</b>{"✓" if on else "·"}</div>')
-    return f'<div class="week">{"".join(cells)}<span class="pill">● updated daily</span></div>'
+        cells.append(f'<div class="day{" on" if on else ""}"><b>{t["days"][i]}</b>{"✓" if on else "·"}</div>')
+    return f'<div class="week">{"".join(cells)}<span class="pill">{t["updated"]}</span></div>'
 
 
-def premium_card(compact=False):
-    perks = "" if compact else "<ul><li>Every tested money method, ranked by cash per hour</li><li>Full mission walkthroughs with gold-medal routes</li><li>Map of hidden shops, stashes and secrets</li><li>New premium guide every day</li></ul>"
-    return f"""<div class="prem"><div class="prem-top"><span>VICE HUB PREMIUM</span><b>5 €<small> / month</small></b></div>
-{perks}<a href="{u('/premium/')}" class="btn-grad">Get Premium</a><p class="tiny">Cancel anytime.</p></div>"""
+def countdown(lang):
+    t = T[lang]
+    y, m, d = (int(x) for x in LAUNCH.split("-"))
+    units = json.dumps(t["cd_units"])
+    return f"""<div class="cd" id="cd"><span class="cd-l">{t['cd_label']}</span><b class="cd-v" id="cdv">{t['cd_static']}</b></div>
+<script>(function(){{var T=new Date({y},{m - 1},{d},0,0,0),U={units},el=document.getElementById('cdv'),box=document.getElementById('cd');
+function p(n){{return n<10?'0'+n:n}}function f(){{var s=Math.floor((T-new Date())/1000);if(s<=0){{box.className='cd out';box.innerHTML='<b class="cd-v">{t['cd_out']}</b>';return}}
+var dd=Math.floor(s/86400);el.textContent=(dd?dd+U[0]+' ':'')+p(Math.floor(s%86400/3600))+U[1]+' '+p(Math.floor(s%3600/60))+U[2]+' '+p(s%60)+U[3];setTimeout(f,1000)}}f()}})()</script>"""
+
+
+def premium_card(lang, compact=False):
+    t = T[lang]
+    perks = "" if compact else "<ul>" + "".join(f"<li>{p}</li>" for p in t["perks"]) + "</ul>"
+    return f"""<div class="prem"><div class="prem-top"><span>{t['prem_label']}</span><b>5 €<small>{t['per_month']}</small></b></div>
+{perks}<a href="{u('/premium/', lang)}" class="btn-grad">{t['get_prem']}</a><p class="tiny">{t['cancel']}</p></div>"""
 
 
 def render_body(lines):
@@ -130,6 +263,95 @@ def write(path, content):
     p.write_text(content)
 
 
+def build_lang(lang, arts, today, tips):
+    t = T[lang]
+    P = pre(lang)
+    soc = "".join(f'<a href="{s["href"]}" target="_blank" rel="noopener">{s["label"]}</a>' for s in CFG["socials"])
+
+    tiles = "".join(
+        f'<a class="tile" href="{u("/" + c["id"] + "/", lang)}"><div class="em">{c["emoji"]}</div><b>{cl(c, lang)}</b><small>{E(cl(c, lang, "blurb"))}</small></a>'
+        for c in CATS
+    ) + f'<a class="tile" href="{u("/community/", lang)}" style="border-color:rgba(255,216,74,.4)"><div class="em">🗳️</div><b>{t["community"]}</b><small>{t["community_tile"]}</small></a>'
+    show_cd = today <= dt.date.fromisoformat(LAUNCH)
+    home = f"""
+<section class="wrap hero">
+  <div><p class="kicker">{t['kicker']}</p>
+  <h1>{t['h1a']}<br><span class="grad">{t['h1b']}</span></h1>
+  <p class="lead">{t['lead_home']}</p>
+  {countdown(lang) if show_cd else ''}
+  {week_strip(today, lang)}</div>
+  <div class="hero-prem">{premium_card(lang, compact=True)}</div>
+</section>
+<section class="wrap"><div class="tiles">{tiles}</div></section>
+<section class="wrap" id="latest"><h2 class="sec">{t['latest']}</h2><div class="grid">{''.join(card(a, lang) for a in arts)}</div></section>
+<section class="wrap"><div class="band"><div><h2 class="sec">{t['band_h']}</h2>
+<p class="lead">{t['band_p']}</p></div>{premium_card(lang)}</div></section>"""
+    desc = CFG.get(f"description_{lang}") or CFG["description"] if lang != "en" else CFG["description"]
+    write(f"{P}/", page(lang, t["home_title"], desc, "/", home))
+
+    soon = CFG.get("soon_de" if lang == "de" else "soon", {}) or CFG.get("soon", {})
+    for c in CATS:
+        lst = [a for a in arts if a["category"] == c["id"]]
+        pills = "".join(
+            f'<a class="pillnav{" act" if x["id"] == c["id"] else ""}" href="{u("/" + x["id"] + "/", lang)}">{x["emoji"]} {cl(x, lang)}</a>' for x in CATS
+        )
+        note = f'<div class="note">{E(soon[c["id"]])}</div>' if c["id"] in soon else ""
+        grid = f'<div class="grid">{"".join(card(a, lang) for a in lst)}</div>' if lst else f'<p class="muted">{t["cat_empty"]}</p>'
+        blurb = cl(c, lang, "blurb")
+        body = f"""<section class="wrap"><div class="pills">{pills}</div>
+<h1 class="cat">{c['emoji']} GTA 6 {cl(c, lang).upper()}</h1><p class="lead">{E(blurb)}{t['cat_suffix']}</p>{note}</section>
+<section class="wrap">{grid}</section><section class="wrap narrow">{premium_card(lang)}</section>"""
+        write(f"{P}/{c['id']}/", page(lang, f"GTA 6 {cl(c, lang)} · Vice Hub", f"{blurb}. {t['cat_desc']}", f"/{c['id']}/", body))
+
+    for a in arts:
+        la = loc(a, lang)
+        prem = a.get("premium")
+        content = render_body(la["body"])
+        if prem:
+            content = f'<div class="locked">{content}<div class="fade"></div></div>{premium_card(lang)}'
+        src = ""
+        if a.get("sources"):
+            src = f'<div class="sources"><b>{t["sources"]}</b><ul>' + "".join(
+                f'<li><a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a></li>' for s in a["sources"]
+            ) + "</ul></div>"
+        more = [x for x in arts if x["slug"] != a["slug"]][:3]
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": la["title"], "description": la["summary"],
+              "datePublished": a["date"], "inLanguage": lang, "image": f"{ORIGIN}/assets/cover.png",
+              "publisher": {"@type": "Organization", "name": "Vice Hub"}, "isAccessibleForFree": not prem}
+        body = f"""<article class="wrap art">
+<a class="back" href="{u('/' + a['category'] + '/', lang)}">← {cl(CAT[a['category']], lang)}</a>
+{thumb(a['category'], lang, big=True)}
+<div class="row">{chip(a['category'], lang)}<span class="muted">{fmt(a['date'], lang)} · {minutes(la)} {t['min_read']}</span></div>
+<h1>{E(la['title'])}</h1><p class="lead">{E(la['summary'])}</p>
+<div class="prose">{content}</div>{src}</article>
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+<section class="wrap"><h2 class="sec">{t['more']}</h2><div class="grid">{''.join(card(x, lang) for x in more)}</div></section>"""
+        write(f"{P}/a/{a['slug']}/", page(lang, f"{la['title']} · Vice Hub", la["summary"], f"/a/{a['slug']}/", body, "article"))
+
+    tip_html = "".join(
+        f'<div class="tip"><a class="vote" href="{E(x["url"])}" target="_blank" rel="noopener">▲<span>{x.get("votes", 0)}</span></a><div><small>{E(x.get("category", "Tips"))} · {t["by"]} {E(x.get("author", t["anon"]))}</small><h3>{E(x["title"])}</h3><p>{E(x["body"])}</p></div></div>'
+        for x in sorted(tips, key=lambda x: -x.get("votes", 0))
+    ) or f'<div class="note">{t["com_empty"]}</div>'
+    com = f"""<section class="wrap"><p class="kicker" style="padding-top:24px;color:#ffe58a">{t['com_kicker']}</p><h1 class="cat">{t['com_h']}</h1>
+<p class="lead">{t['com_lead']}</p>
+<div class="cgrid"><div>{tip_html}</div><div class="prem"><div class="prem-top"><span>{t['post_tip_h']}</span></div><p style="color:#e6d6f2">{t['post_tip_p']}</p><a class="btn-grad" style="display:block" href="{E(CFG['tip_url'])}" target="_blank" rel="noopener">{t['share_tip']}</a><p class="tiny">{t['form_note']}</p></div></div></section>"""
+    write(f"{P}/community/", page(lang, t["com_title"], t["com_desc"], "/community/", com))
+
+    checkout = CFG.get("checkout_url", "")
+    cta = (f'<a class="btn-grad big" href="{E(checkout)}">{t["prem_sub"]}</a>' if checkout else
+           f'<div class="note">{t["prem_status"]}</div><p class="soc big">{soc}</p>')
+    faq = "".join(f"<details><summary>{q}</summary><p>{a_}</p></details>" for q, a_ in t["prem_faq"])
+    prem_body = f"""<section class="wrap narrow"><p class="kicker" style="padding-top:24px">Vice Hub Premium</p><h1 class="cat">{t['prem_h']}</h1>
+<p class="lead">{t['prem_intro']}</p>
+<ul class="perks">{''.join(f'<li>{p}</li>' for p in t['prem_perks'])}</ul>{cta}<div class="faq">{faq}</div></section>"""
+    write(f"{P}/premium/", page(lang, t["prem_title"], t["prem_desc"], "/premium/", prem_body))
+
+    nf = page(lang, t["nf_title"], t["nf_title"], "/404.html",
+              f'<section class="wrap narrow"><h1 class="cat">WASTED.</h1><p class="lead">{t["nf_p"]}</p><a class="btn-grad" href="{u("/", lang)}">{t["nf_btn"]}</a></section>',
+              alternates=False)
+    return nf
+
+
 def build():
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -139,87 +361,24 @@ def build():
     arts = load_articles()
     today = dt.date.fromisoformat(arts[0]["date"]) if arts else dt.date.today()
     today = max(today, dt.date.today())
-
-    tiles = "".join(
-        f'<a class="tile" href="{u("/" + c["id"] + "/")}"><div class="em">{c["emoji"]}</div><b>{c["label"]}</b><small>{E(c["blurb"])}</small></a>'
-        for c in CATS
-    ) + f'<a class="tile" href="{u("/community/")}" style="border-color:rgba(255,216,74,.4)"><div class="em">🗳️</div><b>Community</b><small>Player tips, voted by you</small></a>'
-    home = f"""
-<section class="wrap hero">
-  <div><p class="kicker">GTA 6 · Vice City · Leonida</p>
-  <h1>EVERYTHING GTA 6.<br><span class="grad">UPDATED DAILY.</span></h1>
-  <p class="lead">Hacks, tips, mission guides and rankings. Checked against real sources, no fake glitches, no spoilers in titles.</p>
-  {week_strip(today)}</div>
-  {premium_card(compact=True)}
-</section>
-<section class="wrap"><div class="tiles">{tiles}</div></section>
-<section class="wrap" id="latest"><h2 class="sec">LATEST</h2><div class="grid">{''.join(card(a) for a in arts)}</div></section>
-<section class="wrap"><div class="band"><div><h2 class="sec">GO PREMIUM FOR THE GOOD STUFF</h2>
-<p class="lead">Free guides stay free. Premium gets every tested money method, full mission walkthroughs and the map of hidden spots, the day we find them.</p></div>{premium_card()}</div></section>"""
-    write("/", page("Vice Hub · Everything GTA 6, updated daily", CFG["description"], "/", home))
-
-    soon = CFG.get("soon", {})
-    for c in CATS:
-        lst = [a for a in arts if a["category"] == c["id"]]
-        pills = "".join(
-            f'<a class="pillnav{" act" if x["id"] == c["id"] else ""}" href="{u("/" + x["id"] + "/")}">{x["emoji"]} {x["label"]}</a>' for x in CATS
-        )
-        note = f'<div class="note">{E(soon[c["id"]])}</div>' if c["id"] in soon else ""
-        grid = f'<div class="grid">{"".join(card(a) for a in lst)}</div>' if lst else '<p class="muted">First guides land here on launch day.</p>'
-        body = f"""<section class="wrap"><div class="pills">{pills}</div>
-<h1 class="cat">{c['emoji']} GTA 6 {c['label'].upper()}</h1><p class="lead">{E(c['blurb'])}. New posts every day.</p>{note}</section>
-<section class="wrap">{grid}</section><section class="wrap narrow">{premium_card()}</section>"""
-        write(f"/{c['id']}/", page(f"GTA 6 {c['label']} · Vice Hub", f"{c['blurb']}. Updated daily on Vice Hub.", f"/{c['id']}/", body))
-
-    for a in arts:
-        prem = a.get("premium")
-        content = render_body(a["body"])
-        if prem:
-            content = f'<div class="locked">{content}<div class="fade"></div></div>{premium_card()}'
-        src = ""
-        if a.get("sources"):
-            src = '<div class="sources"><b>Sources</b><ul>' + "".join(
-                f'<li><a href="{E(s["url"])}" target="_blank" rel="noopener nofollow">{E(s["label"])}</a></li>' for s in a["sources"]
-            ) + "</ul></div>"
-        more = [x for x in arts if x["slug"] != a["slug"]][:3]
-        body = f"""<article class="wrap art">
-<a class="back" href="{u('/' + a['category'] + '/')}">← {CAT[a['category']]['label']}</a>
-<div class="row">{chip(a['category'])}<span class="muted">{fmt(a['date'])} · {a['minutes']} min read</span></div>
-<h1>{E(a['title'])}</h1><p class="lead">{E(a['summary'])}</p>
-<div class="prose">{content}</div>{src}</article>
-<section class="wrap"><h2 class="sec">MORE GUIDES</h2><div class="grid">{''.join(card(x) for x in more)}</div></section>"""
-        write(f"/a/{a['slug']}/", page(f"{a['title']} · Vice Hub", a["summary"], f"/a/{a['slug']}/", body, "article"))
-
     tips = json.loads((ROOT / "content" / "community.json").read_text())
-    post = CFG["tip_url"]
-    tip_html = "".join(
-        f'<div class="tip"><a class="vote" href="{E(t["url"])}" target="_blank" rel="noopener">▲<span>{t.get("votes", 0)}</span></a><div><small>{E(t.get("category", "Tips"))} · by {E(t.get("author", "anonymous"))}</small><h3>{E(t["title"])}</h3><p>{E(t["body"])}</p></div></div>'
-        for t in sorted(tips, key=lambda t: -t.get("votes", 0))
-    ) or '<div class="note">No tips on the board yet. Be the first one.</div>'
-    com = f"""<section class="wrap"><p class="kicker" style="padding-top:24px;color:#ffe58a">By players, for players</p><h1 class="cat">COMMUNITY TIPS</h1>
-<p class="lead">Found a money trick, a hidden shop or a faster mission route? Post it. Upvote the best ones with 👍. The top tips get checked and turned into full guides.</p>
-<div class="cgrid"><div>{tip_html}</div><div class="prem"><div class="prem-top"><span>POST A TIP</span></div><p style="color:#e6d6f2">Takes 30 seconds. Pick a category, write your tip, done. Tips with the most 👍 land on this board.</p><a class="btn-grad" style="display:block" href="{E(post)}" target="_blank" rel="noopener">Share your tip</a><p class="tiny">Opens a short form (free GitHub account needed).</p></div></div></section>"""
-    write("/community/", page("GTA 6 Community Tips · Vice Hub", "Tips, glitches and secrets found by GTA 6 players. Vote for the best ones.", "/community/", com))
 
-    checkout = CFG.get("checkout_url", "")
-    cta = (f'<a class="btn-grad big" href="{E(checkout)}">Subscribe for 5 € / month</a>' if checkout else
-           '<div class="note">Premium opens at launch. Follow us so you do not miss it:</div><p class="soc big">' +
-           "".join(f'<a href="{s["href"]}" target="_blank" rel="noopener">{s["label"]}</a>' for s in CFG["socials"]) + "</p>")
-    prem_body = f"""<section class="wrap narrow"><p class="kicker">Vice Hub Premium</p><h1 class="cat">THE GOOD STUFF. 5 € / MONTH.</h1>
-<ul class="perks"><li>💰 Every tested money method, ranked by cash per hour</li><li>🎯 Full mission walkthroughs with gold-medal routes</li>
-<li>🗺️ The map of hidden shops, stashes and secrets</li><li>⚡ A new premium guide every day</li><li>🚫 No ads</li></ul>{cta}</section>"""
-    write("/premium/", page("Vice Hub Premium · 5 € / month", "Every tested GTA 6 money method, mission walkthroughs and hidden spots.", "/premium/", prem_body))
+    for lang in LANGS:
+        nf = build_lang(lang, arts, today, tips)
+        write(f"{pre(lang)}/404.html", nf)
 
-    write("/404.html", page("Not found · Vice Hub", "Page not found", "/404.html",
-                            f'<section class="wrap narrow"><h1 class="cat">WASTED.</h1><p class="lead">This page does not exist.</p><a class="btn-grad" href="{u("/")}">Back to the hub</a></section>'))
-
-    urls = ["/", "/premium/", "/community/"] + [f"/{c['id']}/" for c in CATS] + [f"/a/{a['slug']}/" for a in arts]
-    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sm += [f"  <url><loc>{ORIGIN}{p}</loc><lastmod>{today.isoformat()}</lastmod></url>" for p in urls]
+    paths = ["/", "/premium/", "/community/"] + [f"/{c['id']}/" for c in CATS] + [f"/a/{a['slug']}/" for a in arts]
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for p in paths:
+        alts = (f'<xhtml:link rel="alternate" hreflang="en" href="{ORIGIN}{p}"/>'
+                f'<xhtml:link rel="alternate" hreflang="de" href="{ORIGIN}/de{p}"/>')
+        for lang in LANGS:
+            sm.append(f"  <url><loc>{ORIGIN}{pre(lang)}{p}</loc><lastmod>{today.isoformat()}</lastmod>{alts}</url>")
     sm.append("</urlset>")
     (OUT / "sitemap.xml").write_text("\n".join(sm))
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {ORIGIN}/sitemap.xml\n")
-    print(f"built {len(arts)} articles, {len(urls)} pages -> {OUT}")
+    print(f"built {len(arts)} articles x {len(LANGS)} languages, {len(paths) * len(LANGS)} pages -> {OUT}")
 
 
 if __name__ == "__main__":

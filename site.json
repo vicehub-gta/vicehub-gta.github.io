@@ -22,5 +22,11 @@
     "hacks": "Every money method and shortcut is checked before it goes up. No fake glitch clickbait.",
     "rankings": "Top cars, guns, properties and hideouts, re-ranked as soon as players have real numbers."
   },
-  "tip_url": "https://github.com/vicehub-gta/vicehub-gta.github.io/issues/new?template=tip.yml"
+  "tip_url": "https://github.com/vicehub-gta/vicehub-gta.github.io/issues/new?template=tip.yml",
+  "description_de": "GTA-6-Hacks, Tipps, Missionsguides und Rankings. Mit echten Quellen geprüft, keine Fake-Glitches, jeden Tag neu.",
+  "soon_de": {
+    "missions": "Komplette Walkthroughs für jede Story-Mission, Gold-Medaillen-Routen und versteckte Extras kommen ab Launch-Tag (19. Nov.) und dann täglich.",
+    "hacks": "Jede Geldmethode und Abkürzung wird geprüft, bevor sie online geht. Kein Fake-Glitch-Clickbait.",
+    "rankings": "Top-Autos, Waffen, Immobilien und Verstecke, neu sortiert, sobald Spieler echte Zahlen haben."
+  }
 }

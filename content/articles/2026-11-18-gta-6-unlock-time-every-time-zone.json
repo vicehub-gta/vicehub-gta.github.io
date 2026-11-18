@@ -3,7 +3,6 @@
   "title": "GTA 6 unlock time: when you can play in your time zone",
   "category": "news",
   "date": "2026-11-18",
-  "minutes": 3,
   "summary": "GTA 6 unlocks at midnight local time on 19 November, so New Zealand plays first and the US West Coast last.",
   "body": [
     "Rockstar is launching GTA 6 at midnight local time on Thursday, 19 November 2026. It is a rolling launch by region, not one worldwide moment.",
@@ -21,5 +20,19 @@
       "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
     }
   ],
-  "order": 0
+  "order": 0,
+  "de": {
+    "title": "GTA 6 Freischaltzeit: Wann du in deiner Zeitzone spielen kannst",
+    "summary": "GTA 6 wird am 19. November um Mitternacht Ortszeit freigeschaltet. Neuseeland spielt zuerst, die US-Westküste zuletzt.",
+    "body": [
+      "Rockstar startet GTA 6 am Donnerstag, 19. November 2026, um Mitternacht Ortszeit. Es ist ein gestaffelter Start nach Region, kein weltweiter Moment.",
+      "## Was das heißt",
+      "- Neuseeland und Australien sind zuerst dran (einige Streamer spielen dort schon)",
+      "- Deutschland, Österreich, Schweiz: 00:00 Uhr MEZ am 19. November",
+      "- UK: 00:00 GMT am 19. November",
+      "- US-Osten: 00:00 ET, US-Westen: 00:00 PT am 19. November",
+      "Maßgeblich ist der Countdown im Store deiner Konsole für dein Konto und deine Region. Zeigt er noch Restzeit, startet das Spiel nicht, auch wenn es komplett installiert ist.",
+      "Plattformen: PlayStation 5 und Xbox Series X|S. Eine PC-Version ist zum Release nicht in Sicht."
+    ]
+  }
 }

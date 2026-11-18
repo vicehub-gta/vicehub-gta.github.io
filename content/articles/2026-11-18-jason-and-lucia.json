@@ -3,11 +3,48 @@
   "title": "Jason & Lucia: what we know before day one",
   "category": "missions",
   "date": "2026-11-18",
-  "minutes": 2,
-  "summary": "Two protagonists, one couple. Mission walkthroughs land here from launch night.",
+  "summary": "Two protagonists, one couple, a story that starts with Lucia walking out of prison. What Rockstar has confirmed, spoiler-free.",
   "body": [
-    "GTA 6 follows Jason and Lucia across Vice City and Leonida. It is the first mainline GTA with a female lead protagonist.",
-    "Mission walkthroughs, gold-medal routes and choices that matter will be added here mission by mission after launch, without spoilers in the titles."
+    "GTA 6 follows Jason Duval and Lucia Caminos across Vice City and the state of Leonida. Lucia is the first female lead in a mainline GTA.",
+    "## Lucia Caminos",
+    "Rockstar calls her one half of the protagonist duo. Her story starts when she gets out of prison, where she ended up while trying to provide for her family.",
+    "## Jason Duval",
+    "Rockstar lists Jason as Lucia's partner and the second protagonist. Trailers show him as someone who grew up around crime, tried to leave it behind and ended up working for drug runners in Vice City.",
+    "## Other confirmed faces",
+    "- Raul Batista",
+    "- Brian Heder",
+    "- Cal Hampton",
+    "- Boobie Ike",
+    "- Dre'Quan Priest",
+    "- Real Dimez",
+    "## Coming here after launch",
+    "Mission walkthroughs, gold-medal routes and the choices that matter, mission by mission, without spoilers in the titles."
   ],
-  "order": -7
+  "order": -7,
+  "de": {
+    "title": "Jason & Lucia: Was wir vor dem Launch wissen",
+    "summary": "Zwei Hauptfiguren, ein Paar, und eine Story, die mit Lucias Entlassung aus dem Gefängnis beginnt. Was Rockstar bestätigt hat, spoilerfrei.",
+    "body": [
+      "GTA 6 begleitet Jason Duval und Lucia Caminos durch Vice City und den Bundesstaat Leonida. Lucia ist die erste weibliche Hauptfigur in einem Haupt-GTA.",
+      "## Lucia Caminos",
+      "Rockstar nennt sie eine Hälfte des Protagonisten-Duos. Ihre Geschichte beginnt mit ihrer Entlassung aus dem Gefängnis, in das sie kam, als sie versuchte, ihre Familie zu versorgen.",
+      "## Jason Duval",
+      "Rockstar führt Jason als Lucias Partner und zweiten Protagonisten. Die Trailer zeigen ihn als jemanden, der mit Kriminalität aufgewachsen ist, raus wollte und dann doch für Drogenkuriere in Vice City gearbeitet hat.",
+      "## Weitere bestätigte Figuren",
+      "- Raul Batista",
+      "- Brian Heder",
+      "- Cal Hampton",
+      "- Boobie Ike",
+      "- Dre'Quan Priest",
+      "- Real Dimez",
+      "## Kommt hier nach dem Launch",
+      "Missions-Walkthroughs, Gold-Routen und die Entscheidungen, die zählen, Mission für Mission, ohne Spoiler in den Titeln."
+    ]
+  },
+  "sources": [
+    {
+      "label": "PC Gamer, character guide (updated 12 Nov 2026)",
+      "url": "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters"
+    }
+  ]
 }

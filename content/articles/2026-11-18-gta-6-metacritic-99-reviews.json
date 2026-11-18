@@ -3,7 +3,6 @@
   "title": "GTA 6 hits 99 on Metacritic and ties the all-time record",
   "category": "news",
   "date": "2026-11-18",
-  "minutes": 3,
   "summary": "Reviews are out and GTA 6 sits at 99, level with Ocarina of Time as the best-reviewed game Metacritic has ever listed.",
   "body": [
     "The review embargo lifted on 18 November at 6 am ET (11:00 GMT), the same moment the game unlocked in New Zealand. Within hours GTA 6 was sitting at 99 on Metacritic.",
@@ -37,5 +36,27 @@
       "url": "https://www.dexerto.com/gta/gta-6-is-the-joint-best-reviewed-game-of-the-all-time-3429300/"
     }
   ],
-  "order": 3
+  "order": 3,
+  "de": {
+    "title": "GTA 6 holt 99 auf Metacritic und zieht mit dem Allzeit-Rekord gleich",
+    "summary": "Die Tests sind da: GTA 6 steht bei 99, gleichauf mit Ocarina of Time als bestbewertetes Spiel, das Metacritic je gelistet hat.",
+    "body": [
+      "Das Test-Embargo fiel am 18. November um 12:00 Uhr deutscher Zeit (11:00 GMT), im selben Moment, in dem das Spiel in Neuseeland freigeschaltet wurde. Innerhalb weniger Stunden stand GTA 6 bei 99 auf Metacritic.",
+      "## Die Zahlen",
+      "- 99/100 auf Metacritic, genauso viel wie The Legend of Zelda: Ocarina of Time von 1998",
+      "- Anfangs rund 110 Kritiken, später am Tag über 140",
+      "- Erste Zählung: etwa vier von fünf Tests gaben die volle 10, keiner lag unter 90",
+      "- OpenCritic: 100 % der Kritiker empfehlen es, Top-Kritiker-Schnitt 98",
+      "## Was die Tester loben",
+      "- Fahrgefühl und Verkehr, die schwerer und lebendiger wirken als in GTA V",
+      "- Licht und Details, die mehrere Magazine als neuen Maßstab für Open Worlds bezeichnen",
+      "- Die Geschichte von Jason und Lucia, hin- und hergerissen zwischen Verzweiflung und schnellem Geld",
+      "- Ein riesiges, dichtes Leonida, das Abstecher abseits der Missionen belohnt",
+      "## Die (kleinen) Kritikpunkte",
+      "- Ein paar Tests erwähnen kleine Ruckler",
+      "- Konsolen laufen mit 30 FPS, ohne 60-FPS-Modus zum Start, auch nicht auf der PS5 Pro",
+      "## Unsere Meinung",
+      "Die Wertung kann noch um einen Punkt fallen, wenn späte Tests dazukommen, aber stärker kann ein Spiel kaum starten. Wer auf das Urteil gewartet hat: Das ist es. Unsere Tipps und Missionshilfen kommen ab der Launch-Nacht hierher."
+    ]
+  }
 }

@@ -3,16 +3,44 @@
   "title": "GTA Online on GTA 6: is there a release date?",
   "category": "news",
   "date": "2026-11-18",
-  "minutes": 1,
-  "summary": "No date yet. We will post it here the minute Rockstar does.",
+  "summary": "No date yet, and Rockstar has said nothing about price or format. Here is what is confirmed, what is likely, and what to ignore.",
   "body": [
-    "As of 16 November 2026, Rockstar has not announced a release date for the new GTA Online. This page updates the moment that changes."
+    "As of 18 November 2026, Rockstar has not announced a release date, a price model or any details for the new GTA Online. This page updates the moment that changes.",
+    "## What is confirmed",
+    "- GTA 6 itself launches on 19 November 2026 on PS5 and Xbox Series X|S",
+    "- No GTA Online date, no price, no feature list has been announced",
+    "- Take-Two says the current GTA Online (on GTA V) keeps getting support after GTA 6 arrives",
+    "## What history suggests",
+    "With GTA V, the story game came out first and GTA Online followed about two weeks later. Rockstar has not said it will do the same this time, so treat any exact date you see online as a guess.",
+    "## What to ignore",
+    "- 'Leaked' GTA Online launch dates without a Rockstar Newswire link",
+    "- Videos promising free Shark Cards or early access codes, those are scams"
   ],
   "sources": [
     {
       "label": "Forbes, 16 Nov 2026",
       "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
+    },
+    {
+      "label": "Outlook Respawn, 11 Aug 2026",
+      "url": "https://respawn.outlookindia.com/gaming/gaming-news/gta-6-online-plans-remain-under-wraps-ahead-of-november-release"
     }
   ],
-  "order": -8
+  "order": -8,
+  "de": {
+    "title": "GTA Online in GTA 6: Gibt es ein Release-Datum?",
+    "summary": "Noch kein Datum, und Rockstar hat nichts zu Preis oder Format gesagt. Das ist bestätigt, das ist wahrscheinlich, das kannst du ignorieren.",
+    "body": [
+      "Stand 18. November 2026 hat Rockstar weder ein Release-Datum noch ein Preismodell oder Details zum neuen GTA Online angekündigt. Diese Seite wird aktualisiert, sobald sich das ändert.",
+      "## Was bestätigt ist",
+      "- GTA 6 selbst erscheint am 19. November 2026 für PS5 und Xbox Series X|S",
+      "- Kein GTA-Online-Datum, kein Preis, keine Feature-Liste angekündigt",
+      "- Take-Two sagt, das aktuelle GTA Online (auf GTA V) wird nach dem Release von GTA 6 weiter unterstützt",
+      "## Was die Vergangenheit zeigt",
+      "Bei GTA V kam zuerst die Story und GTA Online rund zwei Wochen später. Rockstar hat nicht gesagt, dass es diesmal genauso läuft. Jedes genaue Datum im Netz ist also geraten.",
+      "## Was du ignorieren kannst",
+      "- 'Geleakte' GTA-Online-Termine ohne Link zum Rockstar Newswire",
+      "- Videos mit Gratis-Shark-Cards oder Early-Access-Codes, das ist Betrug"
+    ]
+  }
 }

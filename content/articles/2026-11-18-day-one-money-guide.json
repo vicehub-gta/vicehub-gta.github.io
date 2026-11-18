@@ -3,7 +3,6 @@
   "title": "Day-1 money guide: the fastest legit cash in Leonida",
   "category": "hacks",
   "date": "2026-11-18",
-  "minutes": 6,
   "premium": true,
   "summary": "Updated from launch night: every money method we can confirm, ranked by cash per hour.",
   "body": [
@@ -12,5 +11,15 @@
     "- Which early purchases pay for themselves",
     "- Which viral 'glitches' are fake or already patched"
   ],
-  "order": 1
+  "order": 1,
+  "de": {
+    "title": "Tag-1-Geld-Guide: das schnellste legale Geld in Leonida",
+    "summary": "Seit der Launch-Nacht aktualisiert: jede Geldmethode, die wir bestätigen können, sortiert nach Geld pro Stunde.",
+    "body": [
+      "Dieser Guide geht live, sobald das Spiel freigeschaltet ist, und wird jeden Tag aktualisiert.",
+      "- Geld pro Stunde für jede Methode, gemessen, nicht geschätzt",
+      "- Welche frühen Käufe sich selbst bezahlen",
+      "- Welche viralen „Glitches“ fake oder schon gepatcht sind"
+    ]
+  }
 }

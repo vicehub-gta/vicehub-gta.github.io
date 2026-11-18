@@ -1,7 +1,7 @@
 [
-  {"id": "news", "label": "News", "emoji": "📰", "blurb": "Launch facts, patches, updates"},
-  {"id": "hacks", "label": "Hacks", "emoji": "🛠️", "blurb": "Money, glitches, shortcuts (verified only)"},
-  {"id": "tips", "label": "Tips", "emoji": "💡", "blurb": "Settings, first hours, smart moves"},
-  {"id": "missions", "label": "Missions", "emoji": "🎯", "blurb": "Walkthroughs & gold-medal routes"},
-  {"id": "rankings", "label": "Rankings", "emoji": "🏆", "blurb": "Best cars, guns, spots, ranked"}
+  {"id": "news", "label": "News", "emoji": "📰", "blurb": "Launch facts, patches, updates", "label_de": "News", "blurb_de": "Launch-Fakten, Patches, Updates"},
+  {"id": "hacks", "label": "Hacks", "emoji": "🛠️", "blurb": "Money, glitches, shortcuts (verified only)", "label_de": "Hacks", "blurb_de": "Geld, Glitches, Abkürzungen (nur geprüft)"},
+  {"id": "tips", "label": "Tips", "emoji": "💡", "blurb": "Settings, first hours, smart moves", "label_de": "Tipps", "blurb_de": "Einstellungen, erste Stunden, clevere Moves"},
+  {"id": "missions", "label": "Missions", "emoji": "🎯", "blurb": "Walkthroughs & gold-medal routes", "label_de": "Missionen", "blurb_de": "Walkthroughs & Gold-Medaillen-Routen"},
+  {"id": "rankings", "label": "Rankings", "emoji": "🏆", "blurb": "Best cars, guns, spots, ranked", "label_de": "Rankings", "blurb_de": "Beste Autos, Waffen, Orte im Ranking"}
 ]

@@ -3,7 +3,6 @@
   "title": "212 GB: how to make sure GTA 6 is ready at midnight",
   "category": "tips",
   "date": "2026-11-18",
-  "minutes": 3,
   "summary": "Pre-load has been open since 10 November. Boxed copies only contain a code, so everyone has to download.",
   "body": [
     "GTA 6 needs up to 212 GB of free space, depending on your console. Leave extra room: two pre-release updates already landed on 13 and 16 November.",
@@ -20,5 +19,18 @@
       "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
     }
   ],
-  "order": -1
+  "order": -1,
+  "de": {
+    "title": "212 GB: So ist GTA 6 um Mitternacht startklar",
+    "summary": "Der Pre-Load läuft seit dem 10. November. In der Box steckt nur ein Code, also muss jeder herunterladen.",
+    "body": [
+      "GTA 6 braucht je nach Konsole bis zu 212 GB freien Speicher. Lass Puffer: Zwei Updates vor dem Release kamen schon am 13. und 16. November.",
+      "## Checkliste für heute Abend",
+      "- Der Pre-Load für digitale Versionen läuft seit dem 10. November",
+      "- Box-Version = Download-Code, keine Disc. Löse den Code jetzt ein und starte den Pre-Load",
+      "- Lass die Konsole im Ruhemodus mit erlaubten Downloads, dann installieren sich Updates automatisch",
+      "- Internetanbieter warnen, dass der Pre-Load-Traffic die Leitungen bremst, also warte nicht bis Mitternacht",
+      "Gemeldete Versionen nach dem Update vom 16. November: PS5 1.002.001, Xbox 1.0.2.1."
+    ]
+  }
 }

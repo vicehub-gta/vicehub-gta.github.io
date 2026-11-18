@@ -3,20 +3,44 @@
   "title": "PS5 Pro vs PS5 vs Xbox Series X|S: where GTA 6 looks best",
   "category": "rankings",
   "date": "2026-11-18",
-  "minutes": 3,
-  "summary": "All versions target 30 FPS. PS5 Pro adds sharper upscaling and exclusive ray-traced shadows.",
+  "summary": "Every console targets 30 FPS. PS5 Pro puts its extra power into sharper image and ray-traced shadows. Here is the ranking and what it means for you.",
   "body": [
+    "Rockstar's pre-load announcement makes it clear: GTA 6 targets 30 FPS on every console. No 60 FPS or performance mode has been announced for launch.",
     "## Ranking (visuals)",
-    "- 1. PS5 Pro: PlayStation Spectral Super Resolution plus exclusive ray-traced shadows",
-    "- 2. PS5 and Xbox Series X: the baseline experience, 30 FPS target",
-    "- 3. Xbox Series S: same game, lower resolution",
-    "Rockstar has not announced a 60 FPS performance mode for launch. A later update could add one."
+    "- 1. PS5 Pro: PlayStation Spectral Super Resolution (sharper image) plus ray-traced shadows",
+    "- 2. PS5: the baseline, with DualSense haptics, Tempest 3D Audio and fast loading",
+    "- 2. Xbox Series X: the baseline experience, 30 FPS target",
+    "- 4. Xbox Series S: same game, lower resolution",
+    "## Should you upgrade?",
+    "Not for frame rate. A PS5 Pro does not run GTA 6 faster, it runs it sharper. If you already own a PS5 or Series X, you get the same game and the same 30 FPS.",
+    "## Playing without a console",
+    "Microsoft has confirmed GTA 6 on Xbox Cloud Gaming from 19 November, so Game Pass Ultimate members can stream it. There is still no PC version close to release."
   ],
   "sources": [
+    {
+      "label": "GTA BOOM on Rockstar's pre-load post, 10 Nov 2026",
+      "url": "https://www.gtaboom.com/rockstar-confirms-gta-6-ps5-pro-upgrades-ahead-of-november-19-launch-f80c"
+    },
     {
       "label": "Forbes, 16 Nov 2026",
       "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
     }
   ],
-  "order": -4
+  "order": -4,
+  "de": {
+    "title": "PS5 Pro vs. PS5 vs. Xbox Series X|S: Wo GTA 6 am besten aussieht",
+    "summary": "Jede Konsole zielt auf 30 FPS. Die PS5 Pro steckt ihre Extra-Power in ein schärferes Bild und Raytracing-Schatten. Das Ranking und was es für dich heißt.",
+    "body": [
+      "Rockstars Pre-Load-Ankündigung ist eindeutig: GTA 6 läuft auf jeder Konsole mit 30 FPS als Ziel. Ein 60-FPS- oder Performance-Modus ist zum Launch nicht angekündigt.",
+      "## Ranking (Grafik)",
+      "- 1. PS5 Pro: PlayStation Spectral Super Resolution (schärferes Bild) plus Raytracing-Schatten",
+      "- 2. PS5: die Basis, mit DualSense-Haptik, Tempest 3D Audio und schnellen Ladezeiten",
+      "- 2. Xbox Series X: die Basis-Version, 30 FPS",
+      "- 4. Xbox Series S: gleiches Spiel, niedrigere Auflösung",
+      "## Lohnt sich ein Upgrade?",
+      "Nicht wegen der Bildrate. Eine PS5 Pro macht GTA 6 nicht flüssiger, sondern schärfer. Mit PS5 oder Series X bekommst du dasselbe Spiel mit denselben 30 FPS.",
+      "## Spielen ohne Konsole",
+      "Microsoft hat GTA 6 ab 19. November für Xbox Cloud Gaming bestätigt, Game-Pass-Ultimate-Mitglieder können es also streamen. Eine PC-Version ist zum Release weiterhin nicht in Sicht."
+    ]
+  }
 }

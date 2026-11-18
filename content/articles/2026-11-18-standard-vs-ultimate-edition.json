@@ -3,7 +3,6 @@
   "title": "Standard vs Ultimate Edition: what you actually get",
   "category": "news",
   "date": "2026-11-18",
-  "minutes": 4,
   "summary": "$79.99 vs $99.99. The Ultimate extras unlock as the story progresses, and you can upgrade later.",
   "body": [
     "## Standard Edition: $79.99",
@@ -25,5 +24,19 @@
       "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
     }
   ],
-  "order": -2
+  "order": -2,
+  "de": {
+    "title": "Standard oder Ultimate Edition: Was du wirklich bekommst",
+    "summary": "79,99 $ gegen 99,99 $. Die Ultimate-Extras schalten sich mit der Story frei, und du kannst später upgraden.",
+    "body": [
+      "## Standard Edition: 79,99 $",
+      "Das komplette Spiel plus Vorbesteller-Bonus.",
+      "## Ultimate Edition: 99,99 $",
+      "Zusätzliche Fahrzeuge, Waffen, Kleidung, Immobilien und Läden, die sich im Lauf der Story freischalten, darunter eine Oldtimer-Sammlung, zusätzliche Tuning-Werkstätten und ein Tattoo-Studio.",
+      "## Bonus, wenn du vor dem 20. November kaufst",
+      "- Vintage Vice City Pack: ein 55er Vapid Stanier mit Shore Court Garage, ein Outfit und eine Frisur pro Hauptfigur, ein Palmen-Waffenmuster",
+      "- Berechtigte digitale Käufe enthalten einen Monat GTA+. Er verlängert sich zum normalen Preis, wenn du nicht kündigst",
+      "Unsere Meinung: Starte mit der Standard Edition. Das Ultimate-Upgrade kannst du jederzeit kaufen, du verlierst also nichts, wenn du wartest, bis du weißt, dass dir das Spiel gefällt."
+    ]
+  }
 }

@@ -3,7 +3,6 @@
   "title": "How big is the GTA 6 map? Leonida vs Los Santos",
   "category": "rankings",
   "date": "2026-11-18",
-  "minutes": 3,
   "summary": "Vice City and the state of Leonida, described as more than twice the size of GTA V's map.",
   "body": [
     "GTA 6 is set in Vice City and the surrounding state of Leonida, a modern take on Florida. Coverage before launch describes the map as more than twice the size of GTA V.",
@@ -16,5 +15,14 @@
       "url": "https://www.forbes.com/sites/erikkain/2026/11/16/gta-6-release-date-time-ps5-xbox-series-x-download-size-day-one-update/"
     }
   ],
-  "order": -5
+  "order": -5,
+  "de": {
+    "title": "Wie groß ist die GTA-6-Map? Leonida gegen Los Santos",
+    "summary": "Vice City und der Bundesstaat Leonida, laut Berichten mehr als doppelt so groß wie die Map von GTA V.",
+    "body": [
+      "GTA 6 spielt in Vice City und dem umliegenden Bundesstaat Leonida, einer modernen Version von Florida. Berichte vor dem Launch beschreiben die Map als mehr als doppelt so groß wie in GTA V.",
+      "Statt einer großen Wüste gibt es Strände, Sümpfe, Inseln und eine dichte Stadt. Die besten Orte kartieren wir, sobald wir sie gespielt haben.",
+      "Nach dem Launch kommt hier: schnellste Autos, beste Aussichtspunkte, versteckte Läden, als Ranking."
+    ]
+  }
 }

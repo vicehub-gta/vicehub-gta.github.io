@@ -3,7 +3,6 @@
   "title": "7 things to do in your first hour of GTA 6",
   "category": "tips",
   "date": "2026-11-18",
-  "minutes": 4,
   "summary": "Small moves on launch night that save you hours later.",
   "body": [
     "- Claim the Vintage Vice City Pack: the Stanier waits at Shore Court Garage if you bought before 20 November",
@@ -24,5 +23,18 @@
       "url": "https://www.epinpay.com/en/blog/gta-6-pre-order-guide-price-editions-preload"
     }
   ],
-  "order": -3
+  "order": -3,
+  "de": {
+    "title": "7 Dinge für deine erste Stunde in GTA 6",
+    "summary": "Kleine Schritte in der Launch-Nacht, die dir später Stunden sparen.",
+    "body": [
+      "- Hol dir das Vintage Vice City Pack: Der Stanier wartet in der Shore Court Garage, wenn du vor dem 20. November gekauft hast",
+      "- Stell dir eine Erinnerung, GTA+ zu kündigen, falls du es nach dem Gratismonat nicht willst",
+      "- Schalte in der ersten Woche Spoiler-Wörter auf TikTok und X stumm: „ending“, „final mission“, „credits“",
+      "- Rechne mit 30 FPS auf den Launch-Konsolen. Einen 60-FPS-Modus gibt es zum Start nicht, stell lieber Bewegungsunschärfe und Helligkeit ein",
+      "- Auf der PS5 Pro bekommst du PSSR-Upscaling und Raytracing-Schatten, ein Blick in die Einstellungen lohnt sich",
+      "- Speichere oft, die Server sind in der Launch-Nacht voll",
+      "- Speicher dir diesen Hub: Wir legen jeden Tag neue Tipps nach"
+    ]
+  }
 }

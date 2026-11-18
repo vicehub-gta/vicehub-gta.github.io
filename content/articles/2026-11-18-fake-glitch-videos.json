@@ -3,14 +3,32 @@
   "title": "Seen a GTA 6 money glitch already? Read this first",
   "category": "hacks",
   "date": "2026-11-18",
-  "minutes": 2,
-  "summary": "Before launch, every 'GTA 6 money glitch' is fake. Here is how to spot them after launch too.",
+  "summary": "Before launch, every 'GTA 6 money glitch' is fake. Five checks to spot fake ones after launch too.",
   "body": [
-    "Until the game unlocks, nobody outside early regions has played it, so pre-launch glitch videos are made up or recycled from GTA V.",
-    "- Real glitches show the full UI, the money counter and the console",
+    "Until the game unlocks in your region, nobody there has played it, so pre-launch glitch videos are made up or recycled from GTA V.",
+    "## Five checks before you try any glitch",
+    "- Real glitches show the full HUD, the money counter and the console the whole time",
     "- Fake ones cut away right before the payout",
-    "- Rockstar patches money glitches fast, so check the date",
-    "Every hack in this hub is checked before it goes up, and marked when it gets patched."
+    "- Check the upload date against the game's latest patch, Rockstar patches money glitches fast",
+    "- Look for GTA V details: old map, old phone, old cars",
+    "- Never enter your account login on a site that promises free money, that is how accounts get stolen",
+    "## Why it matters",
+    "Some 'glitches' get accounts flagged or wipe progress. Every hack on Vice Hub is checked before it goes up and marked the day it gets patched."
   ],
-  "order": -6
+  "order": -6,
+  "de": {
+    "title": "Schon einen GTA-6-Geldglitch gesehen? Lies das zuerst",
+    "summary": "Vor dem Launch ist jeder 'GTA-6-Geldglitch' fake. Fünf Checks, mit denen du Fakes auch nach dem Launch erkennst.",
+    "body": [
+      "Bis das Spiel in deiner Region freigeschaltet ist, hat dort niemand gespielt. Glitch-Videos vor dem Launch sind also ausgedacht oder aus GTA V recycelt.",
+      "## Fünf Checks, bevor du einen Glitch probierst",
+      "- Echte Glitches zeigen die ganze Zeit das komplette HUD, den Geldzähler und die Konsole",
+      "- Fakes schneiden kurz vor der Auszahlung weg",
+      "- Vergleiche das Upload-Datum mit dem letzten Patch, Rockstar fixt Geldglitches schnell",
+      "- Achte auf GTA-V-Details: alte Karte, altes Handy, alte Autos",
+      "- Gib nie deine Konto-Daten auf einer Seite ein, die Gratis-Geld verspricht, so werden Accounts geklaut",
+      "## Warum das wichtig ist",
+      "Manche 'Glitches' führen zu Account-Sperren oder löschen Fortschritt. Jeder Hack auf Vice Hub wird geprüft, bevor er online geht, und am Tag des Patches markiert."
+    ]
+  }
 }

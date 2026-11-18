@@ -3,7 +3,6 @@
   "title": "Play GTA 6 hours early: the Xbox New Zealand trick, step by step",
   "category": "hacks",
   "date": "2026-11-18",
-  "minutes": 4,
   "summary": "Xbox players can switch their console region to New Zealand and start GTA 6 on 18 November, but it bends the rules and does not work on PS5.",
   "body": [
     "GTA 6 unlocks at midnight local time, and New Zealand hits midnight first. Because Xbox uses one global store, changing your console's region to New Zealand lets you start the game when Kiwis do.",
@@ -41,5 +40,35 @@
       "url": "https://www.videogameschronicle.com/news/new-zealands-official-tourism-agency-jokes-about-gta-6-players-joining-us-to-play-the-game-early/"
     }
   ],
-  "order": 2
+  "order": 2,
+  "de": {
+    "title": "GTA 6 Stunden früher spielen: der Xbox-Neuseeland-Trick Schritt für Schritt",
+    "summary": "Xbox-Spieler können die Konsolenregion auf Neuseeland stellen und GTA 6 schon am 18. November starten. Das biegt allerdings die Regeln und klappt nicht auf der PS5.",
+    "body": [
+      "GTA 6 wird um Mitternacht Ortszeit freigeschaltet, und in Neuseeland ist zuerst Mitternacht. Weil Xbox einen weltweiten Store nutzt, kannst du das Spiel starten, sobald die Neuseeländer es können, wenn du die Region deiner Konsole auf Neuseeland stellst.",
+      "## Wann in Neuseeland Mitternacht ist (18. November)",
+      "- Deutschland, Österreich, Schweiz: 12:00 Uhr MEZ",
+      "- UK: 11:00 GMT",
+      "- US-Osten: 6 Uhr ET",
+      "- US-Westen: 3 Uhr PT",
+      "- Ostaustralien: 22:00 AEDT",
+      "Der Trick funktioniert also schon heute, fast einen ganzen Tag vor dem normalen Start in Europa und den USA.",
+      "## Schritt für Schritt (Xbox Series X|S)",
+      "- 1. Kauf oder Vorbestellung muss zuerst abgeschlossen sein. Wenn du die Region vor dem Bezahlen änderst, können Preise in NZ-Dollar erscheinen und die Zahlung blockieren",
+      "- 2. Schließ den Pre-Load ab (bis zu 212 GB). Ohne installiertes Spiel bringt der Trick nichts",
+      "- 3. Öffne Einstellungen, dann System, dann Sprache & Region",
+      "- 4. Stell den Standort auf Neuseeland",
+      "- 5. Wähle „Jetzt neu starten“ und lass die Konsole neu starten",
+      "- 6. Starte GTA 6, sobald in Neuseeland Mitternacht vorbei ist",
+      "- 7. Wenn du fertig bist, stell die Region wieder auf dein echtes Land",
+      "## Kein Download? Probier die Cloud",
+      "Laut GamesRadar ist GTA 6 auch über Xbox Cloud Gaming spielbar, das klappt sogar auf einer alten Xbox One. Praktisch, wenn dein 212-GB-Pre-Load noch nicht fertig ist.",
+      "## PS5-Besitzer: lass es",
+      "Auf PlayStation hängt die Freischaltung an der Region deines PSN-Kontos, nicht an den Konsoleneinstellungen. Eine geänderte Konsolenregion startet das Spiel nicht früher.",
+      "## Das Risiko, ehrlich gesagt",
+      "Die Region zu ändern, um ein Spiel früher zu starten, verstößt technisch gegen die Xbox-Nutzungsbedingungen. Viele Spieler machen das seit Jahren ohne Probleme, und weder Microsoft noch Rockstar haben sich speziell zu GTA 6 geäußert, aber du machst es auf eigenes Risiko. Nutze es nicht mit einem Konto, bei dem du dir keine Sperre leisten kannst.",
+      "## Unser Tipp",
+      "Wenn du früh spielst, schalte vorher GTA-6-Begriffe in sozialen Netzwerken stumm. Alle anderen posten innerhalb von Stunden Spoiler, und du willst dir die Story nicht verderben, während du noch im Prolog bist."
+    ]
+  }
 }
