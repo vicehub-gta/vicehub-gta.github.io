@@ -321,7 +321,8 @@ def build_lang(lang, arts, today, tips):
     for a in arts:
         la = loc(a, lang)
         prem = a.get("premium")
-        content = render_body(la["body"])
+        # Premium: only a teaser goes into the HTML, the full guide never ships publicly.
+        content = render_body(la["body"][:2] if prem else la["body"])
         if prem:
             content = f'<div class="locked">{content}<div class="fade"></div></div>{premium_card(lang)}'
         src = ""
