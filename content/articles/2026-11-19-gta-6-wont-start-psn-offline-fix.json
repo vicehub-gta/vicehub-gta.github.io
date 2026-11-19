@@ -1,0 +1,76 @@
+{
+  "slug": "gta-6-wont-start-psn-offline-fix",
+  "title": "GTA 6 won't start during an outage? Turn on this setting now",
+  "category": "tips",
+  "date": "2026-11-19",
+  "summary": "PSN went down hours before launch. One console setting lets your installed copy start even when the network does not.",
+  "body": [
+    "On the evening of 18 November, a few hours before GTA 6 unlocked in Europe and the US, the PlayStation Network had a real outage. Downdetector reports peaked at almost 2,000, and players saw sign-in failures and 'services are busy' errors. Sony's status page warned that you 'might have difficulty launching games, apps or network features'. Later that evening the page showed all services green again.",
+    "The problem: a digital copy of GTA 6 checks your license when it starts. If the network is down and your console is not set up for offline play, the game can refuse to launch even though all 212 GB are installed. Do this once and you are safe the next time servers struggle.",
+    "## PS5: enable Console Sharing and Offline Play",
+    "- Open Settings",
+    "- Go to Users and Accounts, then Other",
+    "- Pick Console Sharing and Offline Play and select Enable",
+    "- This only works on one PS5 per account, so use it on the console you play on most",
+    "## Xbox Series X|S: set your home Xbox",
+    "- Press the Xbox button and open Settings",
+    "- Go to General, then Personalization, then My home Xbox",
+    "- Tick Make this my home Xbox",
+    "- Your home console can then start your digital games even when the Xbox network is down",
+    "## Still not starting?",
+    "- Check the official PlayStation or Xbox status page before you start changing settings",
+    "- Install the latest system update and the latest GTA 6 update",
+    "- On PS5, Restore Licenses (Settings, Users and Accounts, Other) can fix a missing license, but it needs a working PSN connection",
+    "- Restart your router and the console. Do not delete and re-download the game, that costs you hours for nothing",
+    "## Good to know",
+    "These settings only help the story mode start. Anything online, like downloading updates or a future GTA Online, still needs a working connection. Neither Sony nor Rockstar has said the outage was caused by GTA 6 traffic."
+  ],
+  "sources": [
+    {
+      "label": "Cosmic Book News, 18 Nov 2026",
+      "url": "https://cosmicbook.news/psn-down-gta-6"
+    },
+    {
+      "label": "80 Level, 19 Nov 2026",
+      "url": "https://80.lv/articles/psn-is-down-for-thousands-just-hours-before-gta-6-launches-on-ps5"
+    },
+    {
+      "label": "Mein-MMO live ticker, 18 Nov 2026",
+      "url": "https://mein-mmo.de/en/psn-down-for-the-gta-6-release-in-the-live-ticker-everything-about-the-outage-and-the-server-status-on-ps5,1597022/"
+    },
+    {
+      "label": "PlayStation Support: Console Sharing and Offline Play",
+      "url": "https://www.playstation.com/en-us/support/account/ps5-console-sharing-offline-play/"
+    },
+    {
+      "label": "Windows Central: using an Xbox offline",
+      "url": "https://www.windowscentral.com/how-use-xbox-series-xs-or-xbox-one-console-offline"
+    }
+  ],
+  "order": 4,
+  "de": {
+    "title": "GTA 6 startet bei einer Störung nicht? Stell das jetzt ein",
+    "summary": "Das PSN war Stunden vor dem Launch down. Mit einer Konsolen-Einstellung startet dein installiertes Spiel auch dann, wenn das Netz streikt.",
+    "body": [
+      "Am Abend des 18. November, ein paar Stunden bevor GTA 6 in Europa und den USA freigeschaltet wurde, hatte das PlayStation Network eine echte Störung. Auf Downdetector gab es in der Spitze fast 2.000 Meldungen, viele kamen nicht mehr rein oder sahen Fehler wie „Dienste ausgelastet“. Sonys Statusseite warnte, dass es Probleme beim Starten von Spielen, Apps und Netzwerkfunktionen geben kann. Später am Abend war dort wieder alles grün.",
+      "Das Problem: Eine digitale Version von GTA 6 prüft beim Start deine Lizenz. Ist das Netz weg und deine Konsole nicht fürs Offline-Spielen eingerichtet, startet das Spiel unter Umständen nicht, obwohl alle 212 GB installiert sind. Stell das einmal ein, dann bist du beim nächsten Server-Chaos auf der sicheren Seite.",
+      "## PS5: Konsolenfreigabe und Offline-Spielen aktivieren",
+      "- Öffne die Einstellungen",
+      "- Geh auf Benutzer und Konten, dann Sonstige",
+      "- Wähle Konsolenfreigabe und Offline-Spielen und tipp auf Aktivieren",
+      "- Das geht pro Konto nur auf einer PS5, also nimm die Konsole, an der du am meisten spielst",
+      "## Xbox Series X|S: Home-Xbox festlegen",
+      "- Drück die Xbox-Taste und öffne die Einstellungen",
+      "- Geh auf Allgemein, dann Personalisierung, dann Meine Home-Xbox",
+      "- Setz den Haken bei Als meine Home-Xbox festlegen",
+      "- Deine Home-Konsole startet dann deine digitalen Spiele auch, wenn das Xbox-Netzwerk down ist",
+      "## Startet trotzdem nicht?",
+      "- Schau zuerst auf die offizielle Statusseite von PlayStation oder Xbox, bevor du an den Einstellungen rumdrehst",
+      "- Installier das neueste Systemupdate und das neueste GTA-6-Update",
+      "- Auf der PS5 kann Lizenzen wiederherstellen (Einstellungen, Benutzer und Konten, Sonstige) eine fehlende Lizenz reparieren, das braucht aber eine funktionierende PSN-Verbindung",
+      "- Router und Konsole neu starten. Lösch das Spiel nicht und lad es nicht neu runter, das kostet dich Stunden und bringt nichts",
+      "## Gut zu wissen",
+      "Die Einstellungen helfen nur dabei, dass der Story-Modus startet. Alles Online, etwa Updates oder ein späteres GTA Online, braucht weiter eine Verbindung. Weder Sony noch Rockstar haben gesagt, dass GTA 6 die Störung ausgelöst hat."
+    ]
+  }
+}
