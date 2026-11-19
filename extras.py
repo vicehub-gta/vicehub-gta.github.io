@@ -50,8 +50,8 @@ X = {
               ("🔌", "Charging station", "Never start a mission at 5 % battery again.", "PS5 controller charging station"),
               ("📺", "4K 120 Hz TV", "Biggest visual upgrade for PS5 Pro and Series X.", "4K 120Hz TV HDMI 2.1")],
         on_amazon="on Amazon", on_ig="on Instant Gaming",
-        disc="Links on this page are affiliate links: buying through them supports Vice Hub at no extra cost to you. As an Amazon Associate I earn from qualifying purchases.",
-        footer_aff="Some links are affiliate links. As an Amazon Associate I earn from qualifying purchases.",
+        disc="Affiliate links. As an Amazon Associate, Vice Hub earns from qualifying purchases.",
+        footer_aff="Contains affiliate links.",
         imp="Legal notice", priv="Privacy",
         prem_notify="Want to know the second Premium opens?",
     ),
@@ -87,8 +87,8 @@ X = {
               ("🔌", "Ladestation", "Nie wieder Mission mit 5 % Akku starten.", "PS5 Controller Ladestation"),
               ("📺", "4K-120-Hz-TV", "Größtes Bild-Upgrade für PS5 Pro und Series X.", "4K 120Hz Fernseher HDMI 2.1")],
         on_amazon="bei Amazon", on_ig="bei Instant Gaming",
-        disc="Links auf dieser Seite sind Affiliate-Links: Kaufst du darüber, unterstützt du Vice Hub, der Preis bleibt gleich. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.",
-        footer_aff="Einige Links sind Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.",
+        disc="Affiliate-Links. Als Amazon-Partner verdient Vice Hub an qualifizierten Verkäufen.",
+        footer_aff="Enthält Affiliate-Links.",
         imp="Impressum", priv="Datenschutz",
         prem_notify="Willst du wissen, wann Premium startet?",
     ),
@@ -269,12 +269,12 @@ def impressum_page(cfg, lang):
         return f"""<section class="wrap narrow legal"><h1 class="cat">IMPRESSUM</h1>
 <h2>Angaben gemäß § 5 DDG</h2><p>{addr}</p><h2>Kontakt</h2><p>E-Mail: {mail}</p>
 <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2><p>{E(lg["name"])}, Anschrift wie oben</p>
-<h2>Affiliate-Hinweis</h2><p>Einige Links auf dieser Website sind Affiliate-Links. Kaufst du darüber, erhalte ich eine Provision, für dich ändert sich der Preis nicht. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p>
+<h2>Affiliate-Hinweis</h2><p>Enthält Affiliate-Links. Als Amazon-Partner verdient Vice Hub an qualifizierten Verkäufen.</p>
 <h2>Marken</h2><p>Grand Theft Auto VI und alle zugehörigen Marken gehören Rockstar Games / Take-Two Interactive. Vice Hub ist eine Fan-Seite und steht in keiner Verbindung zu Rockstar Games.</p>
 <h2>Streitschlichtung</h2><p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></section>"""
     return f"""<section class="wrap narrow legal"><h1 class="cat">LEGAL NOTICE</h1>
 <h2>Information according to § 5 DDG (Germany)</h2><p>{addr}</p><h2>Contact</h2><p>Email: {mail}</p>
-<h2>Affiliate disclosure</h2><p>Some links on this site are affiliate links. As an Amazon Associate I earn from qualifying purchases.</p>
+<h2>Affiliate disclosure</h2><p>Contains affiliate links. As an Amazon Associate, Vice Hub earns from qualifying purchases.</p>
 <h2>Trademarks</h2><p>Grand Theft Auto VI and all related marks belong to Rockstar Games / Take-Two Interactive. Vice Hub is a fan site and not affiliated with Rockstar Games.</p></section>"""
 
 
