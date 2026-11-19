@@ -54,6 +54,28 @@ X = {
         footer_aff="Contains affiliate links.",
         imp="Legal notice", priv="Privacy",
         prem_notify="Want to know the second Premium opens?",
+        bf_title="Black Friday 2026: PS5 & GTA 6 setup deals · Vice Hub",
+        bf_desc="Black Friday week 19 to 30 November: where to find the PS5, controller, SSD, headset and TV deals for GTA 6.",
+        bf_kicker="19 – 30 November", bf_h1="BLACK FRIDAY", bf_h2="GTA 6 SETUP DEALS",
+        bf_lead="The one week a year the GTA 6 setup gets cheap. Tap a category and you land straight on the current deals. Prices change by the hour, so check today.",
+        bf_ends="Deals end in", bf_over="Black Friday week is over", bf_all="All Black Friday deals on Amazon",
+        bf_prime_h="Prime first", bf_prime_p="Prime members get early access to lightning deals and free fast delivery. The 30-day trial is free and you can cancel any time.",
+        bf_prime_btn="Try Prime free for 30 days",
+        bf_deals_h="Deals by category", bf_see="See deals →",
+        bf_cats=[("🎮", "PS5 console", "Slim, Digital and Pro bundles", "PS5 console"),
+                 ("🚗", "GTA 6", "The game for PS5 and Xbox", "GTA 6"),
+                 ("🕹️", "DualSense controller", "Second controller and Edge", "DualSense controller"),
+                 ("💾", "PS5 SSD", "GTA 6 needs 212 GB", "PS5 SSD 2TB heatsink"),
+                 ("🎧", "Gaming headset", "Pulse, SteelSeries, Razer", "gaming headset PS5"),
+                 ("📺", "4K 120 Hz TV", "The biggest picture upgrade", "4K 120Hz TV HDMI 2.1"),
+                 ("🟩", "Xbox Series X|S", "Console and controller", "Xbox Series X"),
+                 ("🔌", "Charging station", "Small price, big comfort", "PS5 controller charging station")],
+        bf_ig_h="Credit and game keys", bf_ig=[("PSN credit", "playstation network card"), ("Xbox gift card", "xbox gift card"), ("Game deals", "")],
+        bf_tip_h="3 rules so you don't get played",
+        bf_tips=["Compare the price with last week before you buy. A red label alone means nothing.",
+                 "Lightning deals sell out in minutes. Put the item on your watch list beforehand.",
+                 "Buy the SSD first: without free space GTA 6 does not even install."],
+        bf_banner="🔥 Black Friday: PS5 & GTA 6 setup deals until 30 Nov", bf_banner_btn="To the deals",
     ),
     "de": dict(
         map="Map", buy="Kaufen & Setup", follow="Folgen", home="Start",
@@ -91,6 +113,28 @@ X = {
         footer_aff="Enthält Affiliate-Links.",
         imp="Impressum", priv="Datenschutz",
         prem_notify="Willst du wissen, wann Premium startet?",
+        bf_title="Black Friday 2026: PS5- & GTA-6-Setup-Deals · Vice Hub",
+        bf_desc="Black-Friday-Woche 19. bis 30. November: Hier findest du die Deals für PS5, Controller, SSD, Headset und TV für GTA 6.",
+        bf_kicker="19. – 30. November", bf_h1="BLACK FRIDAY", bf_h2="GTA-6-SETUP-DEALS",
+        bf_lead="Die eine Woche im Jahr, in der das GTA-6-Setup günstig wird. Tipp auf eine Kategorie und du landest direkt bei den aktuellen Angeboten. Die Preise ändern sich stündlich, also heute reinschauen.",
+        bf_ends="Deals enden in", bf_over="Die Black-Friday-Woche ist vorbei", bf_all="Alle Black-Friday-Deals bei Amazon",
+        bf_prime_h="Erst Prime holen", bf_prime_p="Prime-Mitglieder kommen früher an Blitzangebote und bekommen schnellen Gratis-Versand. Die 30 Tage zum Testen kosten nichts und du kannst jederzeit kündigen.",
+        bf_prime_btn="Prime 30 Tage gratis testen",
+        bf_deals_h="Deals nach Kategorie", bf_see="Deals ansehen →",
+        bf_cats=[("🎮", "PS5-Konsole", "Slim, Digital und Pro-Bundles", "PS5 Konsole"),
+                 ("🚗", "GTA 6", "Das Spiel für PS5 und Xbox", "GTA 6"),
+                 ("🕹️", "DualSense-Controller", "Zweiter Controller und Edge", "DualSense Controller"),
+                 ("💾", "PS5-SSD", "GTA 6 braucht 212 GB", "PS5 SSD 2TB Kühlkörper"),
+                 ("🎧", "Gaming-Headset", "Pulse, SteelSeries, Razer", "Gaming Headset PS5"),
+                 ("📺", "4K-120-Hz-TV", "Das größte Bild-Upgrade", "4K 120Hz Fernseher HDMI 2.1"),
+                 ("🟩", "Xbox Series X|S", "Konsole und Controller", "Xbox Series X"),
+                 ("🔌", "Ladestation", "Kleiner Preis, großer Komfort", "PS5 Controller Ladestation")],
+        bf_ig_h="Guthaben und Game-Keys", bf_ig=[("PSN-Guthaben", "playstation network card"), ("Xbox-Guthaben", "xbox gift card"), ("Game-Deals", "")],
+        bf_tip_h="3 Regeln, damit du nicht reinfällst",
+        bf_tips=["Vergleich den Preis mit letzter Woche, bevor du kaufst. Ein rotes Schild allein heißt nichts.",
+                 "Blitzangebote sind in Minuten weg. Leg das Teil vorher auf deine Merkliste.",
+                 "Kauf zuerst die SSD: Ohne freien Speicher installiert GTA 6 gar nicht erst."],
+        bf_banner="🔥 Black Friday: PS5- & GTA-6-Setup-Deals bis 30. Nov.", bf_banner_btn="Zu den Deals",
     ),
 }
 
@@ -255,6 +299,51 @@ def buy_page(cfg, lang, u):
 <p class="tiny" style="text-align:left;margin-top:24px">{x['disc']}</p></section>"""
 
 
+BF_START, BF_END = "2026-11-19", "2026-11-30"
+
+
+def bf_active(today):
+    return BF_START <= today.isoformat() <= BF_END
+
+
+def bf_banner(lang, u):
+    x = X[lang]
+    return f'''<a class="bfban" href="{u('/black-friday/', lang)}"><b>{x['bf_banner']}</b><span>{x['bf_banner_btn']} →</span></a>'''
+
+
+def bf_page(cfg, lang, u, today):
+    x = X[lang]
+    tag = cfg.get("amazon_tag")
+    hub = "https://www.amazon.de/blackfriday" + (f"?tag={tag}" if tag else "")
+    active = today.isoformat() <= BF_END
+    units = json.dumps(["d", "h", "m", "s"] if lang == "en" else ["T", "h", "m", "s"])
+    cd = f"""<div class="cd" id="bfcd"><span class="cd-l">{x['bf_ends']}</span><b class="cd-v" id="bfv">30.11.</b></div>
+<script>(function(){{var T=new Date(2026,11,1,0,0,0),U={units},el=document.getElementById('bfv'),box=document.getElementById('bfcd');
+function p(n){{return n<10?'0'+n:n}}function f(){{var s=Math.floor((T-new Date())/1000);if(s<=0){{box.innerHTML='<b class="cd-v">{x['bf_over']}</b>';return}}
+var d=Math.floor(s/86400);el.textContent=(d?d+U[0]+' ':'')+p(Math.floor(s%86400/3600))+U[1]+' '+p(Math.floor(s%3600/60))+U[2]+' '+p(s%60)+U[3];setTimeout(f,1000)}}f()}})()</script>""" if active else f'<div class="note">{x["bf_over"]}</div>'
+    prime = ""
+    if cfg.get("prime_url"):
+        prime = f"""<div class="bfprime"><div><b>⚡ {x['bf_prime_h']}</b><p>{x['bf_prime_p']}</p></div>{ext(cfg['prime_url'], x['bf_prime_btn'], 'btn-grad')}</div>"""
+    cats = "".join(
+        f'<a class="bfcat" href="{E(amazon(cfg, q))}" target="_blank" rel="sponsored nofollow noopener"><span class="em">{em}</span>'
+        f'<b>{n}</b><small>{E(d)}</small><i>{x["bf_see"]}</i></a>' for em, n, d, q in x["bf_cats"])
+    ig = ""
+    if cfg.get("instant_gaming_ref"):
+        ref = cfg["instant_gaming_ref"]
+        ig = f'<h2 class="sec">{x["bf_ig_h"]}</h2><div class="btnrow">' + "".join(
+            ext(instant(cfg, q) if q else f"https://www.instant-gaming.com/?igr={ref}", f'{n} {x["on_ig"]}') for n, q in x["bf_ig"]) + "</div>"
+    tips = "".join(f"<li>{E(t)}</li>" for t in x["bf_tips"])
+    return f"""<section class="wrap narrow bf"><p class="kicker" style="padding-top:20px;color:#ffe58a">{x['bf_kicker']}</p>
+<h1 class="cat">{x['bf_h1']}<br><span class="grad">{x['bf_h2']}</span></h1>
+<p class="lead">{x['bf_lead']}</p>{cd}
+<div class="btnrow">{ext(hub, x['bf_all'], 'btn-grad')}</div>
+{prime}
+<h2 class="sec">{x['bf_deals_h']}</h2><div class="bfcats">{cats}</div>
+{ig}
+<h2 class="sec">{x['bf_tip_h']}</h2><ol class="bftips">{tips}</ol>
+<p class="tiny" style="text-align:left;margin-top:24px">{x['disc']}</p></section>"""
+
+
 def legal_ok(cfg):
     lg = cfg.get("legal") or {}
     return all(lg.get(k) for k in ("name", "street", "city", "email"))
@@ -365,6 +454,18 @@ CSS = """
 .gear:hover{border-color:rgba(255,216,74,.7)}.gear .em{font-size:28px}.gear b{color:#fff}.gear p{margin:2px 0;color:#cdb9dc;font-size:14px}.gear small{color:#ffe58a;font-weight:700}
 .legal h2{font-size:18px;color:#fff;margin:28px 0 6px}.legal p{color:#d4c1e2;margin:0}
 .foot nav{flex-wrap:wrap;gap:14px;margin:10px 0}.foot nav a{color:#bda6cf;font-size:14px}
+.bfban{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;margin:14px 0 0;padding:14px 18px;border-radius:16px;
+background:linear-gradient(90deg,#1a1a1a,#3a0d2c);border:1px solid var(--yellow);box-shadow:0 0 28px rgba(255,216,74,.18)}
+.bfban b{color:#ffe58a}.bfban span{font-weight:800;color:#fff;white-space:nowrap}
+.bf h1.cat .grad{font-size:.62em;line-height:1.1;display:inline-block;margin-top:6px}
+.bfprime{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;margin-top:22px;border:1px solid rgba(43,155,255,.5);
+background:linear-gradient(135deg,rgba(43,155,255,.14),rgba(123,44,255,.12));border-radius:20px;padding:18px 20px}
+.bfprime b{color:#fff;font-size:18px}.bfprime p{margin:4px 0 0;color:#d4c1e2;font-size:14px;max-width:420px}.bfprime .btn-grad{margin-top:0}
+.bfcats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:720px){.bfcats{grid-template-columns:repeat(4,1fr)}}
+.bfcat{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:16px;padding:14px;transition:.15s}
+.bfcat:hover{border-color:var(--yellow);transform:translateY(-2px)}.bfcat .em{font-size:28px}.bfcat b{color:#fff;line-height:1.25}
+.bfcat small{color:#cdb9dc;font-size:12.5px;line-height:1.35}.bfcat i{font-style:normal;color:#ffe58a;font-weight:800;font-size:13px;margin-top:auto;padding-top:8px}
+.bftips{padding-left:20px;color:#e6d6f2}.bftips li{padding:4px 0}
 .tabbar{display:none}
 @media(max-width:860px){.nav-hide{display:none}}
 @media(max-width:860px){body{padding-bottom:74px}.tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;justify-content:space-around;gap:0;

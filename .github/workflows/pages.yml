@@ -46,7 +46,7 @@ jobs:
           cfg = json.load(open("site.json"))
           origin = cfg["origin"].rstrip("/")
           slugs = [json.load(open(p))["slug"] for p in pathlib.Path("content/articles").glob("*.json")]
-          paths = ["/", "/map/", "/buy/", "/premium/", "/community/"] + [f"/a/{s}/" for s in slugs]
+          paths = ["/", "/map/", "/buy/", "/black-friday/", "/premium/", "/community/"] + [f"/a/{s}/" for s in slugs]
           urls = [origin + p for p in paths] + [origin + "/de" + p for p in paths]
           body = json.dumps({"host": origin.split("//")[1], "key": key, "keyLocation": f"{origin}/{key}.txt", "urlList": urls})
           r = subprocess.run(["curl", "-sS", "-o", "/dev/null", "-w", "%{http_code}", "-X", "POST", "https://api.indexnow.org/indexnow",

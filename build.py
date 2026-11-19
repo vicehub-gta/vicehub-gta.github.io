@@ -295,7 +295,7 @@ def build_lang(lang, arts, today, tips):
   {week_strip(today, lang)}</div>
   <div class="hero-prem">{premium_card(lang, compact=True)}</div>
 </section>
-<section class="wrap"><div class="tiles">{tiles}</div>{extras.features(lang, u)}</section>
+<section class="wrap">{extras.bf_banner(lang, u) if extras.bf_active(today) else ''}<div class="tiles" style="margin-top:14px">{tiles}</div>{extras.features(lang, u)}</section>
 <section class="wrap" id="latest"><h2 class="sec">{t['latest']}</h2><div class="grid">{''.join(card(a, lang) for a in arts[:6])}</div></section>
 <section class="wrap">{extras.follow_box(CFG, lang)}</section>
 <section class="wrap"><div class="grid" style="margin-top:16px">{''.join(card(a, lang) for a in arts[6:])}</div></section>
@@ -367,7 +367,10 @@ def build_lang(lang, arts, today, tips):
     x = X[lang]
     write(f"{P}/map/", page(lang, x["map_title"], x["map_desc"], "/map/", extras.map_page(CFG, lang, u, CFG["tip_url"]) +
                             f'<section class="wrap">{extras.follow_box(CFG, lang)}</section>', active="map"))
-    write(f"{P}/buy/", page(lang, x["buy_title"], x["buy_desc"], "/buy/", extras.buy_page(CFG, lang, u), active="buy"))
+    bfb = extras.bf_banner(lang, u) if extras.bf_active(today) else ""
+    write(f"{P}/buy/", page(lang, x["buy_title"], x["buy_desc"], "/buy/",
+                            (f'<section class="wrap narrow">{bfb}</section>' if bfb else "") + extras.buy_page(CFG, lang, u), active="buy"))
+    write(f"{P}/black-friday/", page(lang, x["bf_title"], x["bf_desc"], "/black-friday/", extras.bf_page(CFG, lang, u, today), active="buy"))
     if extras.legal_ok(CFG):
         write(f"{P}/impressum/", page(lang, f"{x['imp']} · Vice Hub", x["imp"], "/impressum/", extras.impressum_page(CFG, lang)))
         write(f"{P}/datenschutz/", page(lang, f"{x['priv']} · Vice Hub", x["priv"], "/datenschutz/", extras.privacy_page(CFG, lang)))
@@ -403,7 +406,7 @@ def build():
         nf = build_lang(lang, arts, today, tips)
         write(f"{pre(lang)}/404.html", nf)
 
-    paths = ["/", "/map/", "/buy/", "/premium/", "/community/"] + [f"/{c['id']}/" for c in CATS] + [f"/a/{a['slug']}/" for a in arts]
+    paths = ["/", "/map/", "/buy/", "/black-friday/", "/premium/", "/community/"] + [f"/{c['id']}/" for c in CATS] + [f"/a/{a['slug']}/" for a in arts]
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
     for p in paths:
