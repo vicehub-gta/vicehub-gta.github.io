@@ -56,7 +56,7 @@ T = {
         post_tip_h="POST A TIP", post_tip_p="Takes 30 seconds. Pick a category, write your tip, done. Tips with the most 👍 land on this board.",
         share_tip="Share your tip", form_note="Opens a short form (free GitHub account needed).", by="by", anon="anonymous",
         com_title="GTA 6 Community Tips · Vice Hub", com_desc="Tips, glitches and secrets found by GTA 6 players. Vote for the best ones.",
-        prem_sub="Subscribe for 5 € / month", prem_h="THE GOOD STUFF. 5 € / MONTH.",
+        prem_sub="Subscribe for 5 € / month", prem_vat="Plus VAT at checkout, depending on your country (Germany: 5.95 € total). Payment runs on Gumroad.", prem_h="THE GOOD STUFF. 5 € / MONTH.",
         prem_intro="Vice Hub stays free for news, launch info and basic tips. Premium unlocks the guides that take us hours of testing.",
         prem_perks=["💰 Inside now: the Day-1 money guide, every confirmed method ranked by payout", "🎯 Mission routes, added as we test them",
                     "🗺️ Hidden shops, stashes and secrets, added as we find them", "⚡ At most one new premium guide per day, never news"],
@@ -93,7 +93,7 @@ T = {
         post_tip_h="TIPP POSTEN", post_tip_p="Dauert 30 Sekunden. Kategorie wählen, Tipp schreiben, fertig. Tipps mit den meisten 👍 landen auf diesem Board.",
         share_tip="Tipp teilen", form_note="Öffnet ein kurzes Formular (kostenloses GitHub-Konto nötig).", by="von", anon="anonym",
         com_title="GTA-6-Community-Tipps · Vice Hub", com_desc="Tipps, Glitches und Geheimnisse von GTA-6-Spielern. Vote für die besten.",
-        prem_sub="Für 5 € / Monat abonnieren", prem_h="DIE HARTEN SACHEN. 5 € / MONAT.",
+        prem_sub="Für 5 € / Monat abonnieren", prem_vat="Zzgl. MwSt. an der Kasse, je nach Land (Deutschland: 5,95 € gesamt). Bezahlung läuft über Gumroad.", prem_h="DIE HARTEN SACHEN. 5 € / MONAT.",
         prem_intro="Vice Hub bleibt gratis für News, Launch-Infos und Basis-Tipps. Premium schaltet die Guides frei, für die wir stundenlang testen.",
         prem_perks=["💰 Schon drin: der Tag-1-Geld-Guide, jede bestätigte Methode sortiert nach Auszahlung", "🎯 Missions-Routen, sobald sie getestet sind",
                     "🗺️ Versteckte Shops, Verstecke und Geheimnisse, sobald wir sie finden", "⚡ Höchstens ein neuer Premium-Guide pro Tag, nie News"],
@@ -359,7 +359,7 @@ def build_lang(lang, arts, today, tips):
     write(f"{P}/community/", page(lang, t["com_title"], t["com_desc"], "/community/", com, active="community"))
 
     checkout = CFG.get("checkout_url", "")
-    cta = (f'<a class="btn-grad big" href="{E(checkout)}" target="_blank" rel="noopener">{t["prem_sub"]}</a>' if checkout else
+    cta = (f'<a class="btn-grad big" href="{E(checkout)}" target="_blank" rel="noopener">{t["prem_sub"]}</a><p class="tiny">{t["prem_vat"]}</p>' if checkout else
            f'<div class="note">{t["prem_status"]}</div><p class="soc big">{soc}</p>')
     faq_items = t["prem_faq"][:2] + t["prem_faq_live"] if checkout else t["prem_faq"]
     faq = "".join(f"<details><summary>{q}</summary><p>{a_}</p></details>" for q, a_ in faq_items)
