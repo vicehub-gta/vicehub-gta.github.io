@@ -64,6 +64,8 @@ T = {
         prem_faq=[("What stays free?", "All news, launch facts, release times and basic tips. Only deep guides are Premium."),
                   ("Can I cancel?", "Yes, anytime. No minimum term."),
                   ("When does it open?", "Once the first real guides are tested after launch. We announce it on TikTok, YouTube and Instagram.")],
+        prem_faq_live=[("What do I get today?", "The Day-1 money guide with every confirmed legit money method. New deep guides are added as we test them, at most one per day."),
+                       ("How do I pay and read?", "Checkout and the member area run on Gumroad, which is the seller. You get the guides there right after payment.")],
         prem_title="Vice Hub Premium · 5 € / month", prem_desc="Every tested GTA 6 money method, mission walkthroughs and hidden spots.",
         nf_title="Not found · Vice Hub", nf_p="This page does not exist.", nf_btn="Back to the hub",
         switch="DE", switch_name="Deutsch",
@@ -99,6 +101,8 @@ T = {
         prem_faq=[("Was bleibt gratis?", "Alle News, Launch-Fakten, Release-Zeiten und Basis-Tipps. Nur tiefe Guides sind Premium."),
                   ("Kann ich kündigen?", "Ja, jederzeit. Keine Mindestlaufzeit."),
                   ("Wann geht es los?", "Sobald nach dem Launch die ersten echten Guides getestet sind. Wir sagen es auf TikTok, YouTube und Instagram an.")],
+        prem_faq_live=[("Was bekomme ich heute?", "Den Tag-1-Geld-Guide mit jeder bestätigten legalen Geldmethode. Neue tiefe Guides kommen dazu, sobald sie getestet sind, höchstens einer pro Tag."),
+                       ("Wie zahle und lese ich?", "Bezahlung und Mitgliederbereich laufen über Gumroad, Gumroad ist der Verkäufer. Die Guides bekommst du dort direkt nach der Zahlung.")],
         prem_title="Vice Hub Premium · 5 € / Monat", prem_desc="Jede getestete GTA-6-Geldmethode, Missions-Walkthroughs und versteckte Orte.",
         nf_title="Nicht gefunden · Vice Hub", nf_p="Diese Seite gibt es nicht.", nf_btn="Zurück zum Hub",
         switch="EN", switch_name="English",
@@ -355,9 +359,10 @@ def build_lang(lang, arts, today, tips):
     write(f"{P}/community/", page(lang, t["com_title"], t["com_desc"], "/community/", com, active="community"))
 
     checkout = CFG.get("checkout_url", "")
-    cta = (f'<a class="btn-grad big" href="{E(checkout)}">{t["prem_sub"]}</a>' if checkout else
+    cta = (f'<a class="btn-grad big" href="{E(checkout)}" target="_blank" rel="noopener">{t["prem_sub"]}</a>' if checkout else
            f'<div class="note">{t["prem_status"]}</div><p class="soc big">{soc}</p>')
-    faq = "".join(f"<details><summary>{q}</summary><p>{a_}</p></details>" for q, a_ in t["prem_faq"])
+    faq_items = t["prem_faq"][:2] + t["prem_faq_live"] if checkout else t["prem_faq"]
+    faq = "".join(f"<details><summary>{q}</summary><p>{a_}</p></details>" for q, a_ in faq_items)
     prem_body = f"""<section class="wrap narrow"><p class="kicker" style="padding-top:24px">Vice Hub Premium</p><h1 class="cat">{t['prem_h']}</h1>
 <p class="lead">{t['prem_intro']}</p>
 <ul class="perks">{''.join(f'<li>{p}</li>' for p in t['prem_perks'])}</ul>{cta}<div class="faq">{faq}</div>
