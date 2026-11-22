@@ -3,8 +3,9 @@
   "title": "GTA 6 made an estimated $1.84 billion on day one, more than double GTA V",
   "category": "news",
   "date": "2026-11-20",
-  "summary": "Sensor Tower puts launch-day sales at about 19.1 million copies. Take-Two has not shared a number of its own yet. Here is what is known and what is still an estimate.",
+  "summary": "Sensor Tower first put launch-day sales at about 19.1 million copies and $1.84 billion. Update: Take-Two has since confirmed $3.79 billion in day-one retail sales.",
   "body": [
+    "Update, 22 November: Take-Two has now published official numbers. Day-one retail sales reached $3.79 billion, and 32.5 million copies were sold before release. The estimates below were far too low. Full details in our article on the official sales figures.",
     "GTA 6 unlocked around the world on 19 November, and the first sales numbers are in. They come from the market research firm Sensor Tower, not from Rockstar or Take-Two, so treat them as estimates until the publisher confirms anything.",
     "## The estimate",
     "- About 19.1 million copies sold as of Thursday morning, 19 November (Sensor Tower, reported by Reuters)",
@@ -14,14 +15,14 @@
     "## How that compares with GTA V",
     "GTA V made a little over $800 million on its first day in September 2013 and passed $1 billion after three days, according to Take-Two at the time. Guinness put its first-24-hour total at 11.21 million copies and $815.7 million. If the Sensor Tower estimate holds, GTA 6 did more than twice GTA V's day-one revenue.",
     "## What Take-Two says",
-    "- No official sales figure yet. Take-Two described demand as \"unprecedented\"",
+    "- Before its own figures came out, Take-Two described demand as \"unprecedented\"",
     "- CEO Strauss Zelnick told Reuters: \"we still aren't ready to declare victory\"",
     "- The company expects $3.35 to $3.50 billion in net bookings for October to December, across all of its games",
     "## Keep in mind",
     "- Store unlock times were staggered by time zone, so there is no single clean \"first 24 hours\"",
     "- Estimates count digital sales best. Boxed copies are harder to track",
     "- PC and the new GTA Online still have no release date. Some analysts expect both in 2027, but Rockstar has not announced anything",
-    "We will update this page as soon as Take-Two publishes real numbers."
+    "This page now stays as a record of the first estimates. The official figures are in our 22 November article."
   ],
   "sources": [
     {
@@ -31,13 +32,18 @@
     {
       "label": "Bits From Bytes, pre-launch figures and GTA V records, 17 Nov 2026",
       "url": "https://bitsfrombytes.com/gta-6-first-24-hours-report/"
+    },
+    {
+      "label": "Take-Two press release, 20 Nov 2026",
+      "url": "https://www.take2games.com/ir/news/grand-theft-auto-vi-shatters-entertainment-box-office-records"
     }
   ],
   "order": 7,
   "de": {
     "title": "GTA 6 hat am ersten Tag geschätzt 1,84 Milliarden Dollar eingespielt, mehr als doppelt so viel wie GTA V",
-    "summary": "Laut Sensor Tower gingen am Launch-Tag rund 19,1 Millionen Exemplare über die Ladentheke. Take-Two selbst hat noch keine Zahl genannt. Das ist bekannt und das ist nur geschätzt.",
+    "summary": "Sensor Tower schätzte den Launch-Tag zuerst auf rund 19,1 Millionen Exemplare und 1,84 Milliarden Dollar. Update: Take-Two hat inzwischen 3,79 Milliarden Dollar Umsatz am ersten Tag bestätigt.",
     "body": [
+      "Update, 22. November: Take-Two hat jetzt offizielle Zahlen veröffentlicht. Am ersten Tag kamen 3,79 Milliarden Dollar im Handel zusammen, vor dem Release wurden schon 32,5 Millionen Exemplare verkauft. Die Schätzungen unten lagen also deutlich zu niedrig. Alle Details stehen in unserem Artikel zu den offiziellen Verkaufszahlen.",
       "Seit dem 19. November ist GTA 6 weltweit freigeschaltet, und die ersten Verkaufszahlen sind da. Sie stammen allerdings vom Marktforscher Sensor Tower und nicht von Rockstar oder Take-Two. Bis der Publisher etwas bestätigt, sind es also Schätzungen.",
       "## Die Schätzung",
       "- Rund 19,1 Millionen verkaufte Exemplare bis Donnerstagmorgen, 19. November (Sensor Tower, laut Reuters)",
@@ -47,14 +53,14 @@
       "## Im Vergleich zu GTA V",
       "GTA V hat im September 2013 am ersten Tag etwas mehr als 800 Millionen Dollar eingenommen und nach drei Tagen die Milliarde geknackt, so Take-Two damals. Guinness hat für die ersten 24 Stunden 11,21 Millionen Exemplare und 815,7 Millionen Dollar festgehalten. Stimmt die Schätzung von Sensor Tower, hat GTA 6 am ersten Tag mehr als doppelt so viel Umsatz gemacht.",
       "## Was Take-Two sagt",
-      "- Noch keine offizielle Verkaufszahl. Take-Two spricht von einer \"beispiellosen\" Nachfrage",
+      "- Bevor eigene Zahlen kamen, sprach Take-Two von einer \"beispiellosen\" Nachfrage",
       "- Chef Strauss Zelnick zu Reuters: Man sei \"noch nicht bereit, den Sieg zu verkünden\"",
       "- Für Oktober bis Dezember erwartet die Firma 3,35 bis 3,50 Milliarden Dollar Net Bookings, über alle ihre Spiele hinweg",
       "## Wichtig",
       "- Die Freischaltung lief je nach Zeitzone versetzt, deshalb gibt es keine sauberen \"ersten 24 Stunden\"",
       "- Digitale Verkäufe lassen sich am besten schätzen. Disc-Versionen sind schwerer zu erfassen",
       "- Für PC und das neue GTA Online gibt es weiterhin kein Datum. Manche Analysten rechnen mit 2027, angekündigt hat Rockstar aber nichts",
-      "Sobald Take-Two echte Zahlen veröffentlicht, aktualisieren wir diese Seite."
+      "Diese Seite bleibt als Archiv der ersten Schätzungen stehen. Die offiziellen Zahlen findest du in unserem Artikel vom 22. November."
     ]
   }
 }
