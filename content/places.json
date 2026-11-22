@@ -1,0 +1,348 @@
+{
+ "src": {
+  "GB": [
+   "GTABase",
+   "https://www.gtabase.com/gta-6/properties/"
+  ],
+  "OL": [
+   "OutputLag",
+   "https://outputlag.com/guides/gta-6-safehouses/"
+  ],
+  "TS": [
+   "Timesaver",
+   "https://timesaver.gg/blog/gta-6-safehouses"
+  ],
+  "EG": [
+   "EndgameTools",
+   "https://endgametools.com/en/gta-6/properties"
+  ],
+  "RB": [
+   "RetroBroker",
+   "https://retrobroker.com/en-US/us/blog/gta-6-safehouses-garages-guide"
+  ],
+  "A": [
+   "thegta6map.com",
+   "https://thegta6map.com/easter-eggs"
+  ],
+  "B": [
+   "Leonida Verse",
+   "https://leonidaverse.com/en/codex/gta-6-easter-eggs"
+  ],
+  "E": [
+   "AOEAH",
+   "https://www.aoeah.com/news/4948--top-30-gta-6-best-easter-eggs--secrets-location--loot"
+  ],
+  "PUSH": [
+   "Push Square",
+   "https://www.pushsquare.com/guides/gta-6-collectible-card-locations"
+  ],
+  "GTADB": [
+   "GTADB",
+   "https://gtadb.net/articles/gta-6-collectible-cards-locations-guide/"
+  ]
+ },
+ "safehouses": [
+  {
+   "id": "sh-keys",
+   "name": "Jason's stilt house",
+   "area": "Key Lento, Leonida Keys",
+   "how_en": "Start of the game (Chapter 1). Lost at the end of Chapter 1.",
+   "how_de": "Spielstart (Kapitel 1). Am Ende von Kapitel 1 ist es weg.",
+   "src": [
+    "GB",
+    "OL",
+    "TS",
+    "EG",
+    "RB"
+   ]
+  },
+  {
+   "id": "sh-starlet",
+   "name": "Starlet Motel",
+   "area": "Port Gellhorn, Kelly County",
+   "how_en": "Start of Chapter 2 (Overnight Charges, Just Moved In).",
+   "how_de": "Anfang Kapitel 2 (Overnight Charges, Just Moved In).",
+   "src": [
+    "GB",
+    "OL",
+    "TS",
+    "EG",
+    "RB"
+   ]
+  },
+  {
+   "id": "sh-bayside",
+   "name": "Bayside apartment 201",
+   "area": "Bayside, Vice City",
+   "how_en": "Chapter 3, mission Welcome to Vice City.",
+   "how_de": "Kapitel 3, Mission Welcome to Vice City.",
+   "src": [
+    "GB",
+    "OL",
+    "TS",
+    "EG",
+    "RB"
+   ]
+  },
+  {
+   "id": "sh-yhotel",
+   "name": "The Y Hotel, suite 701",
+   "area": "Ocean Beach, Vice Beach",
+   "how_en": "Chapter 4, mission Ocean Beach.",
+   "how_de": "Kapitel 4, Mission Ocean Beach.",
+   "src": [
+    "GB",
+    "OL",
+    "TS",
+    "EG",
+    "RB"
+   ]
+  }
+ ],
+ "garages_buy": [
+  {
+   "id": "g-mitchell",
+   "name": "Mitchell Auto Center",
+   "area": "Historic Route 628, Kelly County",
+   "price": 5000,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-persistence",
+   "name": "Persistence Road Garage",
+   "area": "Belville, Leonard County",
+   "price": 9500,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-7th",
+   "name": "7th Avenue Garage",
+   "area": "Salton, Vice City",
+   "price": 15000,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-storenbolt",
+   "name": "Store n' Bolt",
+   "area": "Ambrosia",
+   "price": 21000,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-wyatt",
+   "name": "Wyatt Motors",
+   "area": "Allied Crystal, Ambrosia",
+   "price": 27000,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-velarota",
+   "name": "Vela Rota Drive Garage",
+   "area": "Capri, Mariana County",
+   "price": 30000,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-bonita",
+   "name": "Bonita Court Garage",
+   "area": "Vice Beach",
+   "price": 42500,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "g-atlantic",
+   "name": "Atlantic Court Garage",
+   "area": "Ocean Beach, Vice Beach",
+   "price": 50000,
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  }
+ ],
+ "garages_buy_note_en": "Buy them in the Vice City Real Estate app after the Chapter 2 mission Daily Driver. Base prices; once your BuckMe savings reach 100,000 dollars you get 20 % off (160,000 instead of 200,000 for all eight). One parking spot each.",
+ "garages_buy_note_de": "Kaufen über die App Vice City Real Estate nach der Mission Daily Driver in Kapitel 2. Grundpreise; ab 100.000 Dollar Erspartem auf BuckMe gibt es 20 % Rabatt (160.000 statt 200.000 für alle acht). Je ein Stellplatz.",
+ "garages_story": [
+  {
+   "id": "gs-pgstation",
+   "name": "Port Gellhorn Station Garage",
+   "area": "Port Gellhorn, Kelly County",
+   "how_en": "Free after Daily Driver (Chapter 2). 1 spot.",
+   "how_de": "Gratis nach Daily Driver (Kapitel 2). 1 Platz.",
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "gs-thompson",
+   "name": "Thompson Court Garage",
+   "area": "Ocean Beach, Vice Beach",
+   "how_en": "Free after Company Cars (Chapter 4). 2 spots.",
+   "how_de": "Gratis nach Company Cars (Kapitel 4). 2 Plätze.",
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "gs-ne15",
+   "name": "NE 15th Street Garage",
+   "area": "Stockyard, Vice City",
+   "how_en": "Free after Operation Savage Glory (Chapter 5). 2 spots.",
+   "how_de": "Gratis nach Operation Savage Glory (Kapitel 5). 2 Plätze.",
+   "src": [
+    "GB",
+    "EG",
+    "RB",
+    "TS"
+   ]
+  },
+  {
+   "id": "gs-pegassi",
+   "name": "Pegassi Residences Garage",
+   "area": "Tequesta Retreat, Vice City",
+   "how_en": "Free after Operation Savage Glory (Chapter 5). 3 spots, the biggest.",
+   "how_de": "Gratis nach Operation Savage Glory (Kapitel 5). 3 Plätze, die größte.",
+   "src": [
+    "GB",
+    "EG",
+    "TS"
+   ]
+  }
+ ],
+ "garages_bonus": [
+  {
+   "id": "gb-paradise",
+   "name": "Paradise Garage",
+   "area": "Watson Bay",
+   "how_en": "Ultimate Edition. Chapter 2 via Wyman, comes with a '67 Vapid Dominator Buggy.",
+   "how_de": "Ultimate Edition. Kapitel 2 über Wyman, mit '67 Vapid Dominator Buggy.",
+   "src": [
+    "GB",
+    "OL",
+    "EG",
+    "TS"
+   ]
+  },
+  {
+   "id": "gb-shore",
+   "name": "Shore Court Garage",
+   "area": "Shore Drive, Ocean Beach",
+   "how_en": "Pre-order bonus. Chapter 3 Exploration task, comes with a '55 Vapid Stanier.",
+   "how_de": "Vorbesteller-Bonus. Erkundungs-Aufgabe in Kapitel 3, mit '55 Vapid Stanier.",
+   "src": [
+    "GB",
+    "OL",
+    "EG",
+    "TS"
+   ]
+  },
+  {
+   "id": "gb-crosstown",
+   "name": "GTA+ Crosstown Garage",
+   "area": "Crosstown, Vice City",
+   "how_en": "Needs GTA+. Claimable from Chapter 3, comes with an Elegy.",
+   "how_de": "Braucht GTA+. Ab Kapitel 3 abholbar, mit Elegy.",
+   "src": [
+    "GB",
+    "OL",
+    "EG",
+    "TS"
+   ]
+  }
+ ],
+ "eggs_teaser": [
+  {
+   "id": "ee-skunkape",
+   "name": "Skunk Ape (Bigfoot)",
+   "area": "Grassrivers, swamps south of Cottonmouth Lake",
+   "src": [
+    "A",
+    "B",
+    "E"
+   ],
+   "how_en": "Listen for a growl and track it with Focus. You may see it on the road or find signs on a tree. Touching the tree effigy plays a scene and knocks you out.",
+   "how_de": "Hör auf ein Knurren und verfolg es mit Focus. Du siehst es auf der Straße oder findest Spuren an einem Baum. Die Figur am Baum startet eine Szene und schickt dich k.o."
+  },
+  {
+   "id": "ee-ufo",
+   "name": "UFO abduction",
+   "area": "Kelly County, woods near the Starlet Motel, Port Gellhorn",
+   "src": [
+    "A",
+    "B",
+    "E"
+   ],
+   "how_en": "At night, best after 2 AM, follow the blue light down the dirt road. Seeing the beam unlocks the trophy The Truth Is Out There. It does not trigger every time.",
+   "how_de": "Nachts, am besten nach 2 Uhr, dem blauen Licht den Feldweg entlang folgen. Der Strahl schaltet die Trophäe The Truth Is Out There frei. Klappt nicht jedes Mal."
+  },
+  {
+   "id": "ee-cooldog",
+   "name": "Cool Dog and Dog Island",
+   "area": "Far out at sea",
+   "src": [
+    "A",
+    "B",
+    "E"
+   ],
+   "how_en": "Swim far offshore with no vehicle. A dog on a jet ski rescues you and drops you on an island with hidden cash.",
+   "how_de": "Schwimm ohne Fahrzeug weit raus aufs Meer. Ein Hund auf dem Jetski rettet dich und bringt dich auf eine Insel mit verstecktem Geld."
+  }
+ ],
+ "eggs_premium_count": 10,
+ "collect_overview": [
+  {
+   "name_en": "Collectible cards",
+   "name_de": "Sammelkarten",
+   "count": 480,
+   "reward_en": "18 sets. 14 exact spots confirmed by two guide sites are in Premium, more as they get confirmed.",
+   "reward_de": "18 Sets. 14 genaue Fundorte, die zwei Guide-Seiten bestätigen, stehen in Premium. Weitere, sobald sie bestätigt sind.",
+   "src": [
+    "PUSH",
+    "GTADB"
+   ]
+  }
+ ]
+}

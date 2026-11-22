@@ -19,6 +19,7 @@ import shutil
 from pathlib import Path
 
 import extras
+import places
 from extras import X
 
 ROOT = Path(__file__).parent
@@ -39,8 +40,7 @@ T = {
         min="min", min_read="min read", locked="🔒 PREMIUM", updated="● updated daily",
         days=["MO", "TU", "WE", "TH", "FR", "SA", "SU"],
         prem_label="VICE HUB PREMIUM", per_month=" / month", get_prem="See what's in Premium", cancel="Cancel anytime.",
-        perks=["Day-1 money guide: every confirmed method, ranked by payout", "Mission routes, added as we test them",
-               "Hidden shops, stashes and secrets, added as we find them", "At most one new premium guide per day"],
+        perks=["Every GTA 6 secret one day before YouTube and TikTok", "14 confirmed card spots and 13 secret locations to tick off", "Day-1 money guide: every confirmed method, ranked by payout", "Only spots two guide sites agree on"],
         kicker="GTA 6 · Vice City · Leonida", h1a="EVERYTHING GTA 6.", h1b="UPDATED DAILY.",
         lead_home="Hacks, tips, mission guides and rankings. Every fact linked to its source, no fake glitches, no spoilers in titles.",
         cd_label="GTA 6 unlocks in", cd_out="GTA 6 IS OUT NOW", cd_static="19 Nov 2026 · 00:00 your local time",
@@ -58,15 +58,13 @@ T = {
         com_title="GTA 6 Community Tips · Vice Hub", com_desc="Tips, glitches and secrets found by GTA 6 players. Vote for the best ones.",
         prem_sub="Subscribe for 5 € / month", prem_vat="In Germany you pay about 5 € in total, VAT included (4.20 € plus 19 % VAT). Gumroad bills in US dollars and tax differs by country, so the amount can vary by a few cents.", prem_h="THE GOOD STUFF. 5 € / MONTH.",
         prem_intro="Vice Hub stays free for news, launch info and basic tips. Premium unlocks the guides that take us hours of testing.",
-        prem_perks=["💰 Inside now: the Day-1 money guide, every confirmed method ranked by payout", "🎯 Mission routes, added as we test them",
-                    "🗺️ Hidden shops, stashes and secrets, added as we find them", "⚡ At most one new premium guide per day, never news"],
+        prem_perks=["🔑 Every GTA 6 secret one day before it goes up on YouTube and TikTok, with sources (#4 to #10 are already scheduled)", "📍 14 exact collectible card spots, confirmed by two guide sites, as a tick-off checklist", "👽 13 secret locations with exact places: Bigfoot, the UFO, Dexter's apartment, Cool Dog and more", "💰 The Day-1 money guide: every confirmed legit money method, ranked by payout", "🆓 Free for everyone: news, the map and the checklist of all safehouses and garages"],
         prem_status="Premium is not open yet. We take no payments and ask for no card details until it launches. Follow us to hear first:",
         prem_faq=[("What stays free?", "All news, launch facts, release times and basic tips. Only deep guides are Premium."),
                   ("Can I cancel?", "Yes, anytime. No minimum term."),
                   ("When does it open?", "Once the first real guides are tested after launch. We announce it on TikTok, YouTube and Instagram.")],
-        prem_faq_live=[("What do I get today?", "The Day-1 money guide with every confirmed legit money method. New deep guides are added as we test them, at most one per day."),
-                       ("How do I pay and read?", "Checkout and the member area run on Gumroad, which is the seller. You get the guides there right after payment.")],
-        prem_title="Vice Hub Premium · 5 € / month", prem_desc="Deep GTA 6 guides: tested money methods, mission routes and hidden spots, added as we test them.",
+        prem_faq_live=[("What do I get today?", "Everything in the list above. New secrets arrive one day before each video, new spots once a second guide site confirms them. We never add a spot we could not check."), ("How do I get in?", "Payment runs through Gumroad, Gumroad is the seller. Your access code is in your Gumroad receipt and library. Enter it once at vicehub-gta.github.io/premium/members/ and this device remembers it.")],
+        prem_title="Vice Hub Premium · 5 € / month", prem_desc="GTA 6 secrets one day early, confirmed collectible and secret locations to tick off, and the Day-1 money guide.",
         nf_title="Not found · Vice Hub", nf_p="This page does not exist.", nf_btn="Back to the hub",
         switch="DE", switch_name="Deutsch",
     ),
@@ -76,8 +74,7 @@ T = {
         min="Min.", min_read="Min. Lesezeit", locked="🔒 PREMIUM", updated="● täglich neu",
         days=["MO", "DI", "MI", "DO", "FR", "SA", "SO"],
         prem_label="VICE HUB PREMIUM", per_month=" / Monat", get_prem="Das steckt in Premium", cancel="Jederzeit kündbar.",
-        perks=["Tag-1-Geld-Guide: jede bestätigte Methode, sortiert nach Auszahlung", "Missions-Routen, sobald sie getestet sind",
-               "Versteckte Shops, Verstecke und Geheimnisse, sobald wir sie finden", "Höchstens ein neuer Premium-Guide pro Tag"],
+        perks=["Jedes GTA-6-Secret einen Tag vor YouTube und TikTok", "14 bestätigte Karten-Fundorte und 13 Geheimnis-Orte zum Abhaken", "Tag-1-Geld-Guide: jede bestätigte Methode, sortiert nach Auszahlung", "Nur Fundorte, bei denen zwei Guide-Seiten übereinstimmen"],
         kicker="GTA 6 · Vice City · Leonida", h1a="ALLES ZU GTA 6.", h1b="JEDEN TAG NEU.",
         lead_home="Hacks, Tipps, Missionsguides und Rankings. Jeder Fakt mit Quelle, keine Fake-Glitches, keine Spoiler in Titeln.",
         cd_label="GTA 6 startet in", cd_out="GTA 6 IST DRAUSSEN", cd_static="19. Nov. 2026 · 00:00 Uhr deine Ortszeit",
@@ -95,15 +92,13 @@ T = {
         com_title="GTA-6-Community-Tipps · Vice Hub", com_desc="Tipps, Glitches und Geheimnisse von GTA-6-Spielern. Vote für die besten.",
         prem_sub="Für 5 € / Monat abonnieren", prem_vat="In Deutschland zahlst du insgesamt rund 5 € inkl. MwSt. (4,20 € plus 19 % MwSt.). Gumroad rechnet in US-Dollar ab und die Steuer hängt vom Land ab, deshalb kann der Betrag um ein paar Cent abweichen.", prem_h="DIE HARTEN SACHEN. 5 € / MONAT.",
         prem_intro="Vice Hub bleibt gratis für News, Launch-Infos und Basis-Tipps. Premium schaltet die Guides frei, für die wir stundenlang testen.",
-        prem_perks=["💰 Schon drin: der Tag-1-Geld-Guide, jede bestätigte Methode sortiert nach Auszahlung", "🎯 Missions-Routen, sobald sie getestet sind",
-                    "🗺️ Versteckte Shops, Verstecke und Geheimnisse, sobald wir sie finden", "⚡ Höchstens ein neuer Premium-Guide pro Tag, nie News"],
+        prem_perks=["🔑 Jedes GTA-6-Secret einen Tag bevor es auf YouTube und TikTok kommt, mit Quellen (#4 bis #10 sind schon geplant)", "📍 14 genaue Sammelkarten-Fundorte, von zwei Guide-Seiten bestätigt, als Checkliste zum Abhaken", "👽 13 Geheimnis-Orte mit genauem Platz: Bigfoot, das UFO, Dexters Wohnung, Cool Dog und mehr", "💰 Der Tag-1-Geld-Guide: jede bestätigte legale Geldmethode, sortiert nach Auszahlung", "🆓 Für alle gratis: News, die Map und die Checkliste aller Unterkünfte und Garagen"],
         prem_status="Premium ist noch nicht offen. Bis zum Start nehmen wir kein Geld und fragen keine Kartendaten ab. Folge uns, dann erfährst du es zuerst:",
         prem_faq=[("Was bleibt gratis?", "Alle News, Launch-Fakten, Release-Zeiten und Basis-Tipps. Nur tiefe Guides sind Premium."),
                   ("Kann ich kündigen?", "Ja, jederzeit. Keine Mindestlaufzeit."),
                   ("Wann geht es los?", "Sobald nach dem Launch die ersten echten Guides getestet sind. Wir sagen es auf TikTok, YouTube und Instagram an.")],
-        prem_faq_live=[("Was bekomme ich heute?", "Den Tag-1-Geld-Guide mit jeder bestätigten legalen Geldmethode. Neue tiefe Guides kommen dazu, sobald sie getestet sind, höchstens einer pro Tag."),
-                       ("Wie zahle und lese ich?", "Bezahlung und Mitgliederbereich laufen über Gumroad, Gumroad ist der Verkäufer. Die Guides bekommst du dort direkt nach der Zahlung.")],
-        prem_title="Vice Hub Premium · 5 € / Monat", prem_desc="Tiefe GTA-6-Guides: getestete Geldmethoden, Missions-Routen und versteckte Orte, sobald sie getestet sind.",
+        prem_faq_live=[("Was bekomme ich heute?", "Alles aus der Liste oben. Neue Secrets kommen einen Tag vor jedem Video, neue Fundorte, sobald eine zweite Guide-Seite sie bestätigt. Wir tragen nichts ein, was wir nicht prüfen konnten."), ("Wie komme ich rein?", "Bezahlt wird über Gumroad, Gumroad ist der Verkäufer. Deinen Zugangscode findest du in der Gumroad-Quittung und Bibliothek. Einmal auf vicehub-gta.github.io/de/premium/members/ eingeben, dann merkt sich dein Gerät ihn.")],
+        prem_title="Vice Hub Premium · 5 € / Monat", prem_desc="GTA-6-Secrets einen Tag früher, bestätigte Fundorte und Geheimnis-Orte zum Abhaken und der Tag-1-Geld-Guide.",
         nf_title="Nicht gefunden · Vice Hub", nf_p="Diese Seite gibt es nicht.", nf_btn="Zurück zum Hub",
         switch="EN", switch_name="English",
     ),
@@ -363,15 +358,24 @@ def build_lang(lang, arts, today, tips):
            f'<div class="note">{t["prem_status"]}</div><p class="soc big">{soc}</p>')
     faq_items = t["prem_faq"][:2] + t["prem_faq_live"] if checkout else t["prem_faq"]
     faq = "".join(f"<details><summary>{q}</summary><p>{a_}</p></details>" for q, a_ in faq_items)
+    members_link = (f'<p style="margin:14px 0 0"><a class="btn-ghost" href="{u("/premium/members/", lang)}">'
+                    f'{"🔑 Schon Mitglied? Zum Mitgliederbereich" if lang == "de" else "🔑 Already a member? Open the members area"}</a></p>'
+                    if checkout and places.vault() else "")
     prem_body = f"""<section class="wrap narrow"><p class="kicker" style="padding-top:24px">Vice Hub Premium</p><h1 class="cat">{t['prem_h']}</h1>
 <p class="lead">{t['prem_intro']}</p>
-<ul class="perks">{''.join(f'<li>{p}</li>' for p in t['prem_perks'])}</ul>{cta}<div class="faq">{faq}</div>
+<ul class="perks">{''.join(f'<li>{p}</li>' for p in t['prem_perks'])}</ul>{cta}{members_link}<div class="faq">{faq}</div>
 {'' if checkout else extras.follow_box(CFG, lang)}</section>"""
     write(f"{P}/premium/", page(lang, t["prem_title"], t["prem_desc"], "/premium/", prem_body))
 
     x = X[lang]
     write(f"{P}/map/", page(lang, x["map_title"], x["map_desc"], "/map/", extras.map_page(CFG, lang, u, CFG["tip_url"]) +
+                            places.checklist(lang, u) +
                             f'<section class="wrap">{extras.follow_box(CFG, lang)}</section>', active="map"))
+    mem = places.members_page(lang, checkout)
+    if mem:
+        pl = places.L[lang]
+        write(f"{P}/premium/members/", page(lang, pl["m_title"], pl["m_title"], "/premium/members/", mem)
+              .replace("<head>", '<head>\n<meta name="robots" content="noindex,nofollow">', 1))
     bfb = extras.bf_banner(lang, u) if extras.bf_active(today) else ""
     write(f"{P}/buy/", page(lang, x["buy_title"], x["buy_desc"], "/buy/",
                             (f'<section class="wrap narrow">{bfb}</section>' if bfb else "") + extras.buy_page(CFG, lang, u), active="buy"))
@@ -392,7 +396,7 @@ def build():
     OUT.mkdir()
     shutil.copytree(ROOT / "assets", OUT / "assets")
     css = OUT / "assets" / "style.css"
-    css.write_text(extras.CSS + css.read_text())
+    css.write_text(extras.CSS + places.CSS + css.read_text())
     (OUT / ".nojekyll").write_text("")
     (OUT / "manifest.webmanifest").write_text(extras.manifest(CFG, BASE))
     if CFG.get("adsense_client"):

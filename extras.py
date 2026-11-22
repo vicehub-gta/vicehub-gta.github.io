@@ -29,8 +29,8 @@ X = {
         # map
         map_title="GTA 6 Map: all Leonida regions explained · Vice Hub",
         map_desc="Interactive GTA 6 map guide: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga. What to find in each region.",
-        map_kicker="Interactive map", map_h="THE LEONIDA MAP", map_lead="Tap a pin. Six regions, each with its own vibe, missions and money. We add real spots (shops, stashes, fastest routes) as players find them.",
-        map_hint="👆 Tap a region", map_soon="Spot something in-game? Post it and it can land on this map.", map_post="Post a spot",
+        map_kicker="Interactive map", map_h="THE LEONIDA MAP", map_lead="Tap a pin for each of the six regions. Below it: every verified safehouse, garage and secret as a checklist you can tick off.",
+        map_hint="👆 Tap a region", map_jump="↓ Locations checklist", map_soon="Spot something in-game? Post it and it can land on this map.", map_post="Post a spot",
         map_note="Regions as revealed by Rockstar before launch. Layout is a simplified fan sketch, not the in-game map.",
         # buy
         buy_title="Buy GTA 6: editions, prices & the best setup · Vice Hub",
@@ -89,8 +89,8 @@ X = {
         buybox_h="Noch kein GTA 6?", buybox_p="Editionen, Preise und das Setup, mit dem der 212-GB-Download weniger wehtut.", buybox_btn="Editionen & Setup ansehen",
         map_title="GTA-6-Map: alle Regionen von Leonida erklärt · Vice Hub",
         map_desc="Interaktiver GTA-6-Map-Guide: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia und Mount Kalaga. Was du in welcher Region findest.",
-        map_kicker="Interaktive Map", map_h="DIE LEONIDA-MAP", map_lead="Tipp auf einen Pin. Sechs Regionen, jede mit eigenem Vibe, eigenen Missionen und eigenem Geld. Echte Spots (Shops, Verstecke, schnellste Routen) tragen wir ein, sobald Spieler sie finden.",
-        map_hint="👆 Tipp auf eine Region", map_soon="Im Spiel was entdeckt? Poste es, dann kann es auf diese Map.", map_post="Spot posten",
+        map_kicker="Interaktive Map", map_h="DIE LEONIDA-MAP", map_lead="Tipp auf einen Pin für jede der sechs Regionen. Darunter: jede bestätigte Unterkunft, Garage und jedes Geheimnis als Checkliste zum Abhaken.",
+        map_hint="👆 Tipp auf eine Region", map_jump="↓ Fundorte-Checkliste", map_soon="Im Spiel was entdeckt? Poste es, dann kann es auf diese Map.", map_post="Spot posten",
         map_note="Regionen so, wie Rockstar sie vor dem Launch gezeigt hat. Die Skizze ist vereinfacht, nicht die echte Spielkarte.",
         buy_title="GTA 6 kaufen: Editionen, Preise & bestes Setup · Vice Hub",
         buy_desc="GTA 6 Standard oder Ultimate, was du für den 212-GB-Download brauchst und welcher Controller, welches Headset und welcher TV sich lohnen.",
@@ -264,7 +264,7 @@ def map_page(cfg, lang, u, tip_url):
     lst = "".join(f'<li data-r="{rid}"><b>{em} {name}</b><span>{E(de if lang == "de" else en)}</span></li>'
                   for rid, name, _, _, em, en, de in REGIONS)
     return f"""<section class="wrap"><p class="kicker" style="padding-top:20px">{x['map_kicker']}</p><h1 class="cat">{x['map_h']}</h1>
-<p class="lead">{x['map_lead']}</p>
+<p class="lead">{x['map_lead']}</p><p style="margin:0 0 16px"><a class="btn-ghost" href="#fundorte">{x['map_jump']}</a></p>
 <div class="mapwrap"><svg viewBox="0 0 400 520" class="map" role="img" aria-label="Leonida">
 <defs><linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a0b33"/><stop offset="1" stop-color="#0b2a3f"/></linearGradient>
 <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a1550"/><stop offset="1" stop-color="#5a1d4d"/></linearGradient></defs>
