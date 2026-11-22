@@ -13,7 +13,7 @@ ROOT = Path(__file__).parent
 L = {
     "en": dict(
         h="FIND EVERYTHING", kicker="Locations checklist",
-        lead="Every safehouse, garage and collectible we could verify, from at least two guide sites. Tick what you have, your progress stays on this device.",
+        lead="Every safehouse and garage, plus the first secrets, each confirmed by at least two guide sites. Tick what you have, your progress stays on this device.",
         done="done", of="of", reset="Reset my ticks", src="Sources",
         safehouses="🏠 Safehouses", sh_note="You get these through the story, you can't buy homes.",
         garages_buy="🚗 Garages to buy", garages_story="🎁 Free story garages", garages_bonus="⭐ Edition and GTA+ garages",
@@ -34,7 +34,7 @@ L = {
     ),
     "de": dict(
         h="FINDE ALLES", kicker="Fundorte-Checkliste",
-        lead="Jedes Versteck, jede Garage und jedes Sammelobjekt, das wir bei mindestens zwei Guide-Seiten bestätigt gefunden haben. Hak ab, was du hast, dein Fortschritt bleibt auf diesem Gerät.",
+        lead="Jede Unterkunft und jede Garage, dazu die ersten Geheimnisse, jeweils von mindestens zwei Guide-Seiten bestätigt. Hak ab, was du hast, dein Fortschritt bleibt auf diesem Gerät.",
         done="erledigt", of="von", reset="Meine Haken löschen", src="Quellen",
         safehouses="🏠 Unterkünfte", sh_note="Die bekommst du über die Story, Häuser kaufen geht nicht.",
         garages_buy="🚗 Garagen zum Kaufen", garages_story="🎁 Gratis-Garagen aus der Story", garages_bonus="⭐ Editions- und GTA+-Garagen",
