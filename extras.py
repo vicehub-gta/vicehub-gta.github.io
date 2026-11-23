@@ -193,7 +193,7 @@ def head_extra(cfg, u):
 
 
 def social_buttons(cfg, big=True):
-    ic = {"TikTok": "♪", "YouTube": "▶", "Instagram": "◎", "Discord": "💬"}
+    ic = {"TikTok": "♪", "YouTube": "▶", "Discord": "💬"}
     socials = list(cfg["socials"])
     if cfg.get("discord_url"):
         socials.append({"label": "Discord", "href": cfg["discord_url"]})
@@ -389,7 +389,7 @@ def privacy_page(cfg, lang):
 <h2>Hosting</h2><p>Diese Website wird bei GitHub Pages gehostet (GitHub Inc., 88 Colin P. Kelly Jr. St., San Francisco, USA). Beim Aufruf verarbeitet GitHub technisch notwendige Daten wie deine IP-Adresse in Server-Logfiles, um die Seite auszuliefern und abzusichern (Art. 6 Abs. 1 lit. f DSGVO). GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Mehr: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement</p>
 <h2>Schriftarten</h2><p>Die Schriftarten werden lokal von diesem Server geladen. Es findet keine Verbindung zu Google Fonts statt.</p>
 <h2>Lokaler Speicher</h2><p>Wenn du die Sprache wechselst, speichert dein Browser diese Wahl lokal (localStorage). Diese Information verlässt dein Gerät nicht.</p>
-<h2>Externe Links</h2><p>Links zu TikTok, YouTube, Instagram, Amazon, Instant Gaming, WhatsApp, X, Reddit und GitHub führen zu Angeboten anderer Anbieter. Erst wenn du sie anklickst, gelten deren Datenschutzbestimmungen. Affiliate-Links enthalten eine Partner-Kennung, damit der Shop einen Kauf zuordnen kann.</p>
+<h2>Externe Links</h2><p>Links zu TikTok, YouTube, Amazon, Instant Gaming, WhatsApp, X, Reddit und GitHub führen zu Angeboten anderer Anbieter. Erst wenn du sie anklickst, gelten deren Datenschutzbestimmungen. Affiliate-Links enthalten eine Partner-Kennung, damit der Shop einen Kauf zuordnen kann.</p>
 <h2>Community-Tipps</h2><p>Tipps werden über ein GitHub-Formular eingereicht. Dafür gilt die Datenschutzerklärung von GitHub. Veröffentlicht wird nur, was du selbst schreibst, und dein GitHub-Name.</p>
 {nl_de}{ads_de}
 <h2>Deine Rechte</h2><p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO) sowie das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde. Schreib dafür an die oben genannte E-Mail-Adresse.</p></section>"""
@@ -398,7 +398,7 @@ def privacy_page(cfg, lang):
 <h2>Hosting</h2><p>This site is hosted on GitHub Pages (GitHub Inc., USA). GitHub processes technically necessary data such as your IP address in server logs to deliver and secure the site.</p>
 <h2>Fonts</h2><p>Fonts are served from this site. No connection to Google Fonts is made.</p>
 <h2>Local storage</h2><p>If you switch language, your browser stores that choice locally. It never leaves your device.</p>
-<h2>External links</h2><p>Links to TikTok, YouTube, Instagram, Amazon, Instant Gaming, WhatsApp, X, Reddit and GitHub lead to other providers whose privacy policies apply once you click. Affiliate links contain a partner ID.</p>
+<h2>External links</h2><p>Links to TikTok, YouTube, Amazon, Instant Gaming, WhatsApp, X, Reddit and GitHub lead to other providers whose privacy policies apply once you click. Affiliate links contain a partner ID.</p>
 {nl_en}{ads_en}
 <h2>Your rights</h2><p>Under the GDPR you can request access, correction, deletion, restriction, portability and object to processing, and complain to a data protection authority. Write to the email above.</p></section>"""
 
@@ -427,7 +427,7 @@ CSS = """
 .socbtns{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:12px}
 .sb{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:14px;font-weight:800;color:#fff;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
 .sb span{font-size:16px}.sb-tiktok{background:#000;border-color:#25f4ee;box-shadow:inset -3px 0 0 #fe2c55}.sb-youtube{background:#ff0033;border-color:#ff0033}
-.sb-instagram{background:linear-gradient(45deg,#f9a825,#e91e63,#7b1fa2);border-color:transparent}.sb-discord{background:#5865f2;border-color:#5865f2}
+.sb-discord{background:#5865f2;border-color:#5865f2}
 .nl{display:flex;gap:8px;flex-wrap:wrap}.nl input{flex:1 1 200px;min-width:0;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.3);color:#fff;padding:12px 18px;font:inherit}
 .nl .btn-grad{margin-top:0;border:0;cursor:pointer;font:inherit;font-weight:800}
 .share{margin-top:32px;border-top:1px solid var(--line);padding-top:20px}.share b{color:#fff}.share-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
