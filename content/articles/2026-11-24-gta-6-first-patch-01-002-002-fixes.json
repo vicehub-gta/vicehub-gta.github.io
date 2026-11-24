@@ -1,0 +1,58 @@
+{
+  "slug": "gta-6-first-patch-01-002-002-fixes",
+  "title": "GTA 6's first post-launch patch: autosave, Wanted Level and crash fixes",
+  "category": "news",
+  "date": "2026-11-24",
+  "order": 2,
+  "summary": "Update 01.002.002 is out on PS5 and Xbox Series X|S. It fixes crashes, broken autosaves, stuck weather, story phone calls that never rang and more. Here is the full list and what is still broken.",
+  "body": [
+    "Rockstar released the first post-launch update for GTA 6 on 23 November 2026, four days after launch. It is version 01.002.002, it is out on PS5 and Xbox Series X|S, and it weighs about 603 MB according to VGC. If your console did not grab it on its own, check for updates before you play.",
+    "## Everything the patch fixes",
+    "These are the fixes from Rockstar Support's patch notes:",
+    "- Several issues that made the game crash",
+    "- The weather not changing for long periods",
+    "- The game not autosaving correctly",
+    "- Phone calls not triggering, including calls that move the story forward or unlock missions",
+    "- Players being unable to lose their Wanted Level",
+    "- The deadlift bar in the gym not working",
+    "- Partners not handing over bags, so you could not sell them to fences",
+    "## Why this one matters",
+    "The phone call bug was the nasty one. If a story call never came, you could get stuck with no new mission on the map. If that happened to you, install the update and wait in free roam for a bit, the call should now come through. The autosave bug has been reported since launch, so it is also worth checking that your last save time looks right.",
+    "## What is still not fixed",
+    "- The game still runs at 30 fps on consoles, and the notes do not mention a performance mode",
+    "- TheGamer still lists object clipping, collision and odd vehicle behaviour as open problems",
+    "- Some sites say the patch makes storms more likely. The official notes only say the weather no longer gets stuck, so ignore the storm claim",
+    "## Our tip until the next patch",
+    "Do not trust autosave completely yet. Before a big mission or after a heist, save manually from the pause menu or at a safehouse. It takes five seconds and can save you an hour of replaying."
+  ],
+  "sources": [
+    {"label": "Rockstar Support, Grand Theft Auto VI launch updates", "url": "https://support.rockstargames.com/articles/sN5pEdFYZdlvijKXd6xpJ/grand-theft-auto-vi-launch-updates-ps5-xbox-series-x-or-s"},
+    {"label": "VGC, GTA 6 has received a new update which fixes autosaving, 23 Nov 2026", "url": "https://www.videogameschronicle.com/news/grand-theft-auto-6-has-received-a-new-patch-which-fixes-autosaving/"},
+    {"label": "Shacknews, GTA 6 Launch Update patch notes, 23 Nov 2026", "url": "https://www.shacknews.com/article/151462/gta-6-launch-update-patch-notes"},
+    {"label": "TheGamer, Everything in GTA 6's first post-launch update, 23 Nov 2026", "url": "https://www.thegamer.com/grand-theft-auto-6-gta-post-launch-gameplay-patch/"}
+  ],
+  "de": {
+    "title": "Erster GTA-6-Patch nach Release: Fixes für Autosave, Fahndungslevel und Abstürze",
+    "summary": "Update 01.002.002 ist für PS5 und Xbox Series X|S da. Es behebt Abstürze, kaputtes Autosave, festhängendes Wetter, Story-Anrufe, die nie kamen, und mehr. Hier die komplette Liste und was noch nicht läuft.",
+    "body": [
+      "Am 23. November 2026, vier Tage nach dem Start, hat Rockstar das erste Update nach Release für GTA 6 veröffentlicht. Es hat die Version 01.002.002, ist für PS5 und Xbox Series X|S erschienen und laut VGC rund 603 MB groß. Falls deine Konsole es nicht automatisch geladen hat, such vor dem Spielen kurz nach Updates.",
+      "## Das behebt der Patch",
+      "Laut den Patch Notes von Rockstar Support:",
+      "- Mehrere Fehler, durch die das Spiel abgestürzt ist",
+      "- Wetter, das sich lange Zeit nicht geändert hat",
+      "- Autosave, das nicht richtig funktioniert hat",
+      "- Anrufe, die nicht ausgelöst wurden, auch solche, die die Story weiterbringen oder Missionen freischalten",
+      "- Fahndungslevel, die man nicht mehr loswurde",
+      "- Die Kreuzheben-Stange im Fitnessstudio, die nicht ging",
+      "- Partner, die dir keine Taschen übergeben haben, sodass du sie nicht beim Hehler verkaufen konntest",
+      "## Warum dieser Patch wichtig ist",
+      "Am fiesesten war der Anruf-Bug. Kam ein Story-Anruf nie, standest du ohne neue Mission auf der Karte da. Ist dir das passiert, installier das Update und bleib kurz im freien Spiel, der Anruf sollte jetzt kommen. Den Autosave-Fehler gab es schon seit dem Start, schau also kurz nach, ob die Zeit deines letzten Spielstands stimmt.",
+      "## Was noch nicht behoben ist",
+      "- Auf Konsolen läuft das Spiel weiter mit 30 fps, ein Performance-Modus steht nicht in den Notes",
+      "- Laut TheGamer gibt es weiterhin Clipping, Kollisionsfehler und seltsames Fahrverhalten",
+      "- Manche Seiten behaupten, mit dem Patch gebe es öfter Stürme. In den offiziellen Notes steht nur, dass das Wetter nicht mehr hängen bleibt, das mit den Stürmen kannst du also ignorieren",
+      "## Unser Tipp bis zum nächsten Patch",
+      "Verlass dich noch nicht voll auf das Autosave. Speicher vor großen Missionen oder nach einem Überfall von Hand im Pausenmenü oder in einem Unterschlupf. Das dauert fünf Sekunden und kann dir eine Stunde Wiederholen ersparen."
+    ]
+  }
+}
