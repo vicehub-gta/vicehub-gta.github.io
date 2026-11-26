@@ -1,0 +1,72 @@
+{
+  "slug": "gta-6-stuttering-patch-rumour-fact-check",
+  "title": "No, there was no GTA 6 stuttering patch on 25 November: what the latest update really fixes",
+  "category": "news",
+  "date": "2026-11-26",
+  "order": 31,
+  "summary": "A post on X promised a GTA 6 patch with a stuttering fix and an apology from Rockstar on 25 November. It never came. Here is what Rockstar has actually released and how to check your version.",
+  "body": [
+    "Since 20 November a post on X has been doing the rounds: Rockstar would release a GTA 6 update on Wednesday 25 November that fixes stuttering, together with an apology. The day has passed and nothing like that has appeared.",
+    "## What the rumour claimed",
+    "- A new patch on 25 November that fixes stuttering and frame drops",
+    "- An official apology from Rockstar for performance problems",
+    "Neither PC Games Hardware nor GTA6 Track found any trace of it. Rockstar's Newswire and its support site have no apology, no date and no patch notes for such an update. The post itself links to no source.",
+    "## The update that is real: 01.002.002",
+    "The only patch since launch went live on Monday 23 November. It is version 01.002.002 on PS5 and 1.0.2.2 on Xbox Series X|S. It is the first update after the 19 November launch and the third overall, after two preload builds on 13 and 16 November.",
+    "Its official notes cover:",
+    "- Phone calls that could block story progress",
+    "- An autosave bug",
+    "- Several causes of crashes",
+    "- Wanted Levels that could stay active forever",
+    "- Weather that stayed the same for unusually long",
+    "A stuttering or rendering fix is not on the list. If your game stutters, this patch will not change that.",
+    "## How to check your version",
+    "- PS5: highlight GTA 6 on the home screen, press Options, then Information",
+    "- Xbox Series X|S: the console installs updates automatically when it is online, so a restart of the game is usually enough",
+    "If you see 01.002.002 on PS5, or your Xbox shows no pending update, you are on the newest build.",
+    "## How to spot fake patch news",
+    "- Real patches come with notes on Rockstar's support site",
+    "- A date with no link to Rockstar is a red flag",
+    "- Wait for the update to show up on your console before you trust a post",
+    "We will cover the next patch here as soon as Rockstar publishes notes for it."
+  ],
+  "sources": [
+    {
+      "label": "PC Games Hardware, Is a new update to fix stuttering coming today?, 25 Nov 2026",
+      "url": "https://www.pcgameshardware.de/GTA-6-Spiel-55239/News/GTA-6-Is-a-new-update-to-fix-stuttering-coming-today-1561060/"
+    },
+    {
+      "label": "GTA6 Track, GTA 6 November 25 patch rumour is fake, 22 Nov 2026",
+      "url": "https://www.gta6track.com/news/gta-6-november-25-patch-rumor-fake"
+    }
+  ],
+  "de": {
+    "title": "Nein, am 25. November kam kein GTA-6-Patch gegen Ruckler: Das bringt das letzte Update wirklich",
+    "summary": "Ein Post auf X hat für den 25. November einen GTA-6-Patch gegen Ruckler plus Entschuldigung von Rockstar versprochen. Gekommen ist nichts. Hier liest du, was Rockstar wirklich veröffentlicht hat und wie du deine Version prüfst.",
+    "body": [
+      "Seit dem 20. November geht auf X ein Post herum: Rockstar soll am Mittwoch, 25. November, ein GTA-6-Update gegen Ruckler veröffentlichen und sich dazu entschuldigen. Der Tag ist vorbei, und so ein Update gibt es nicht.",
+      "## Was das Gerücht behauptet hat",
+      "- Ein neuer Patch am 25. November, der Ruckler und FPS-Einbrüche behebt",
+      "- Eine offizielle Entschuldigung von Rockstar wegen der Performance",
+      "Weder PC Games Hardware noch GTA6 Track haben dafür einen Beleg gefunden. Auf Rockstars Newswire und der Support-Seite steht weder eine Entschuldigung noch ein Termin oder Patch Notes. Der Post selbst nennt keine Quelle.",
+      "## Das echte Update: 01.002.002",
+      "Der einzige Patch seit Release kam am Montag, 23. November. Auf der PS5 heißt er 01.002.002, auf Xbox Series X|S 1.0.2.2. Es ist das erste Update nach dem Start am 19. November und insgesamt das dritte, nach zwei Preload-Versionen am 13. und 16. November.",
+      "Laut den offiziellen Patch Notes behebt er:",
+      "- Telefonanrufe, die die Story blockieren konnten",
+      "- Einen Fehler beim automatischen Speichern",
+      "- Mehrere Absturzursachen",
+      "- Fahndungslevel, die nie mehr verschwunden sind",
+      "- Wetter, das ungewöhnlich lange gleich geblieben ist",
+      "Ein Fix für Ruckler oder Grafikfehler steht nicht drin. Wenn dein Spiel ruckelt, ändert dieser Patch daran nichts.",
+      "## So prüfst du deine Version",
+      "- PS5: GTA 6 auf dem Startbildschirm markieren, Options drücken, dann Informationen",
+      "- Xbox Series X|S: Die Konsole lädt Updates online automatisch, meist reicht ein Neustart des Spiels",
+      "Steht auf der PS5 01.002.002 oder zeigt deine Xbox kein offenes Update, hast du die neueste Version.",
+      "## So erkennst du Fake-Patch-News",
+      "- Echte Patches haben Notes auf Rockstars Support-Seite",
+      "- Ein Termin ohne Link zu Rockstar ist ein Warnsignal",
+      "- Glaub einem Post erst, wenn das Update auf deiner Konsole auftaucht",
+      "Sobald Rockstar Notes für den nächsten Patch veröffentlicht, findest du sie hier."
+    ]
+  }
+}

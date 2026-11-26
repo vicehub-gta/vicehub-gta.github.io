@@ -1,0 +1,74 @@
+{
+  "slug": "gta-6-best-aim-settings-targeting-mode",
+  "title": "GTA 6 aim settings: why lock-on is no longer the default and which targeting mode to pick",
+  "category": "tips",
+  "date": "2026-11-26",
+  "order": 30,
+  "summary": "Rockstar has confirmed it dropped lock-on as the default way to aim in GTA 6. Here is where the Targeting setting sits, what Lock-On, Partial and Free Aim do, and a good starting setup.",
+  "body": [
+    "If gunfights in GTA 6 feel harder than in GTA V, you are not imagining it. In an interview with Final Weapon on 25 November, Rockstar's VP of Technology David Hynd said the team \"knew we wanted to remove lock on as our default targeting mode\". Instead the game leans on free aim with aim assist and uses the DualSense haptics and adaptive triggers on PS5.",
+    "The good news: lock-on is still there, you just have to switch it on.",
+    "## Where to find the setting",
+    "Pause the game, then go to Settings, Gameplay, Combat and pick Targeting. You can change it at any time, even in the middle of a mission.",
+    "## The three targeting modes",
+    "- Lock-On: snaps your aim to the nearest target when you hold L2 or LT. The easiest option and closest to how GTA V played by default.",
+    "- Partial: slows your crosshair when it passes over an enemy but does not lock on. A middle ground and the mode BGR lists as the default.",
+    "- Free Aim: no help at all, you aim fully by hand. Hardest, but the most accurate once you get used to it.",
+    "## Which mode fits you",
+    "- Story first, shooting second: Lock-On. Missions go faster and you stop missing in car chases.",
+    "- You want a challenge but no frustration: Partial.",
+    "- You already aim well on a controller: Free Aim, and also switch off Shooting Assist.",
+    "## A good starting setup",
+    "KeenGamer suggests this balanced setup. Treat it as a starting point and adjust in small steps:",
+    "- Targeting: Partial",
+    "- Aim Assist Strength: 4",
+    "- Aim sensitivity: 8, look sensitivity: 8 to 9",
+    "- Aim Response Curve: Precision",
+    "- Shooting Assist, Drive-By Assist and Quick Draw: On",
+    "Do not copy dead zone or acceleration values from old GTA V guides. GTA 6 handles stick input differently, so start from these numbers and change one value at a time.",
+    "## Quick tip",
+    "Drive-By Assist helps a lot in chases, even if you otherwise play on Free Aim. Turn it off only if you want every shot from the car to be manual."
+  ],
+  "sources": [
+    {
+      "label": "Final Weapon, GTA VI interview: Rockstar Games on world design, lighting, music and gunplay, 25 Nov 2026",
+      "url": "https://finalweapon.net/2026/11/25/gta-6-interview-rockstar-games-world-design-music-combat/"
+    },
+    {
+      "label": "BGR, How to adjust aim assist in GTA 6, 19 Nov 2026",
+      "url": "https://www.bgr.com/2321914/how-to-adjust-aim-assist-gta-6-guide/"
+    },
+    {
+      "label": "KeenGamer, GTA 6 best aim settings for better accuracy and combat, 19 Nov 2026",
+      "url": "https://www.keengamer.com/articles/guides/gta-6-best-aim-settings-for-better-accuracy-and-combat/"
+    }
+  ],
+  "de": {
+    "title": "GTA 6 Ziel-Einstellungen: Warum Lock-On nicht mehr Standard ist und welchen Zielmodus du nehmen solltest",
+    "summary": "Rockstar hat bestätigt, dass Lock-On in GTA 6 nicht mehr der Standard beim Zielen ist. Hier findest du die Einstellung, was Lock-On, Partial und Free Aim machen und ein gutes Start-Setup.",
+    "body": [
+      "Wenn dir Schießereien in GTA 6 schwerer vorkommen als in GTA V, bildest du dir das nicht ein. Im Interview mit Final Weapon am 25. November hat Rockstars VP of Technology David Hynd gesagt, das Team wollte Lock-On als Standard-Zielmodus abschaffen. Stattdessen setzt das Spiel auf freies Zielen mit Zielhilfe und nutzt auf der PS5 die Haptik und adaptiven Trigger des DualSense.",
+      "Die gute Nachricht: Lock-On gibt es noch, du musst es nur einschalten.",
+      "## Wo du die Einstellung findest",
+      "Pausiere das Spiel und geh auf Settings, Gameplay, Combat und dann Targeting (im deutschen Menü die entsprechenden übersetzten Punkte). Du kannst das jederzeit ändern, auch mitten in einer Mission.",
+      "## Die drei Zielmodi",
+      "- Lock-On: Dein Fadenkreuz springt auf das nächste Ziel, sobald du L2 oder LT hältst. Am einfachsten und am nächsten dran an GTA V.",
+      "- Partial: Das Fadenkreuz wird über Gegnern langsamer, rastet aber nicht ein. Der Mittelweg und laut BGR der Standard.",
+      "- Free Aim: Keine Hilfe, du zielst komplett selbst. Am schwersten, aber am genauesten, wenn du dich eingewöhnt hast.",
+      "## Welcher Modus zu dir passt",
+      "- Dir geht's um die Story: Lock-On. Missionen laufen schneller und du triffst bei Verfolgungsjagden endlich.",
+      "- Du willst Herausforderung, aber keinen Frust: Partial.",
+      "- Du zielst am Controller richtig präzise: Free Aim, und schalte dazu die Schusshilfe (Shooting Assist) aus.",
+      "## Ein gutes Start-Setup",
+      "KeenGamer empfiehlt dieses ausgewogene Setup. Nimm es als Startpunkt und passe es in kleinen Schritten an:",
+      "- Zielerfassung: Partial",
+      "- Zielhilfe-Stärke: 4",
+      "- Ziel-Empfindlichkeit: 8, Kamera-Empfindlichkeit: 8 bis 9",
+      "- Ziel-Reaktionskurve: Präzision",
+      "- Schusshilfe, Drive-By-Hilfe und Quick Draw: An",
+      "Übernimm keine Deadzone- oder Beschleunigungswerte aus alten GTA-V-Guides. GTA 6 verarbeitet die Sticks anders, also starte mit diesen Werten und ändere immer nur einen auf einmal.",
+      "## Kurzer Tipp",
+      "Die Drive-By-Hilfe ist bei Verfolgungsjagden Gold wert, auch wenn du sonst mit Free Aim spielst. Schalte sie nur aus, wenn du wirklich jeden Schuss aus dem Auto selbst zielen willst."
+    ]
+  }
+}
