@@ -1,0 +1,44 @@
+{
+  "slug": "gta-6-first-person-camera-glitch",
+  "title": "GTA 6 first person: the camera glitch that gives you a first-person view",
+  "category": "hacks",
+  "date": "2026-11-26",
+  "order": 27,
+  "summary": "GTA 6 has no first-person mode, but a phone-camera glitch keeps the first-person view even on foot. Save first, it may get patched.",
+  "body": [
+    "There is no first-person option in the GTA 6 settings. Players found a glitch that keeps the phone's first-person view after the phone is gone.",
+    "## Steps",
+    "- Save your game first",
+    "- Go to Settings > Controller and set the Touch Pad (PS5) or View button (Xbox) from Map to Camera",
+    "- Sit in any car and press D-pad up to take out the phone. You now see the first-person view",
+    "- Put the phone away and press the Camera button at the same moment, spam it if needed",
+    "- The phone is gone, the first-person view stays, even when you get out and walk",
+    "## How to go back",
+    "Reload your save. Keep in mind that this is a glitch and a patch can remove it."
+  ],
+  "sources": [
+    {
+      "label": "GTABase, how to play in first person in GTA 6",
+      "url": "https://www.gtabase.com/gta-6/articles/how-to-play-in-first-person-in-gta-6"
+    },
+    {
+      "label": "GTA BOOM, first person with the camera glitch",
+      "url": "https://www.gtaboom.com/how-to-play-gta-6-in-first-person-with-the-camera-glitch-976b"
+    }
+  ],
+  "de": {
+    "title": "GTA 6 Ego-Perspektive: Der Kamera-Glitch, der dir eine First-Person-Sicht gibt",
+    "summary": "GTA 6 hat keinen First-Person-Modus, aber ein Handykamera-Glitch hält die Ego-Sicht sogar zu Fuß. Vorher speichern, ein Patch kann ihn entfernen.",
+    "body": [
+      "In den Einstellungen von GTA 6 gibt es keine Ego-Perspektive. Spieler haben einen Glitch gefunden, bei dem die Ego-Sicht des Handys bleibt, nachdem das Handy weg ist.",
+      "## Schritte",
+      "- Speicher zuerst dein Spiel",
+      "- Geh zu Einstellungen > Controller und stell das Touchpad (PS5) oder die Ansicht-Taste (Xbox) von Karte auf Kamera",
+      "- Setz dich in ein Auto und drück Steuerkreuz hoch für das Handy. Jetzt siehst du die Ego-Sicht",
+      "- Steck das Handy weg und drück im selben Moment die Kamera-Taste, notfalls mehrmals schnell",
+      "- Das Handy ist weg, die Ego-Sicht bleibt, auch wenn du aussteigst und läufst",
+      "## Zurück zur normalen Sicht",
+      "Lade deinen Spielstand neu. Denk daran: Es ist ein Glitch, ein Patch kann ihn entfernen."
+    ]
+  }
+}
